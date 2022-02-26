@@ -1,0 +1,1 @@
+  cmus-remote -Q | sed '2q;d' | sed 's/.*\///' | sed 's/(.*).mp3//'

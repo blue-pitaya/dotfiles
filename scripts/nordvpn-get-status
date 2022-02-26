@@ -1,0 +1,12 @@
+#!/bin/sh
+
+case $(nordvpn status | grep -E 'Status: (.?+)$' | sed 's/.*\s//') in
+	Connected)
+		echo "ON"
+		;;
+	Disconnected)
+		echo "OFF"
+		;;
+	*)
+		echo "ERR"
+esac
