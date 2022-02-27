@@ -1,3 +1,11 @@
 #!/bin/sh
 
-youtube-dl --extract-audio --audio-format mp3 -o "$HOME/Music/%(title)s (%(id)s).%(ext)s" --write-description $1 > /dev/null 2>&1 &
+YTID=$(echo $1 | awk -F'=' '{print $2}')
+
+if [ $(find ~/Music -name "*$YTID*" | wc -l) -gt 0 ]
+then
+  echo "Video already downloaded."
+else
+  echo "Start downloading..."
+  youtube-dl --extract-audio --audio-format mp3 -o "~/Music/%(title)s (%(id)s).%(ext)s" --write-description $1 > /dev/null 2>&1 &
+fi

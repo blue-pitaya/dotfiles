@@ -1,0 +1,16 @@
+{
+  "Vsnip snip template": {
+    "prefix": ["vsnip-new"],
+    "body": [
+      "{",
+      "  \"Title\": {",
+      "    \"prefix\": [\"\"],",
+      "    \"body\": [",
+      "    ],",
+      "    \"description\": \"\"",
+      "  }",
+      "}"
+    ],
+    "description": "Vsnip snip template :)"
+  }
+}
