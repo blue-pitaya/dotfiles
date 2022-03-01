@@ -1,0 +1,23 @@
+{
+  "Simple actor": {
+    "prefix": ["actor-new"],
+    "body": [
+      "import akka.actor.typed.scaladsl.Behaviors",
+      "import akka.actor.typed.Behavior",
+      "",
+      "object $1 {",
+      "  trait Message",
+      "",
+      "  def apply(): Behavior[Message] =",
+      "    Behaviors.receive { (context, message) =>",
+      "      message match {",
+      "        case _ => context.log.info(\"Strange message.\")",
+      "      }",
+      "",
+      "      Behaviors.same",
+      "    }",
+      "}"
+    ],
+    "description": "Creates most simple actor."
+  }
+}

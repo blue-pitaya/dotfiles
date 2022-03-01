@@ -11,19 +11,24 @@ Plug 'tpope/vim-fugitive'
 Plug 'scalameta/nvim-metals'
 " Vue plugin
 Plug 'posva/vim-vue'
-" Snippets
+" Autocompletion
 Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip' " This can be removed laters (i dont need support for snippets)
+Plug 'hrsh7th/cmp-nvim-lsp'
+" Snippets
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 " File browser
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
+" todo: add nvim-dap later for debuggind options
 call plug#end()
 
 " ======== Lua-based config ========
 lua require('lsp_rc')
 lua require('nvimtree_rc')
 lua require('telescope_rc')
+lua require('autocomplete_rc')
 
 " ======== Basic settings ========
 set mouse=a
@@ -59,6 +64,8 @@ noremap <C-S> :update<CR>
 inoremap <C-S> <Esc>:update<CR>
 map <space> <nop>
 tnoremap <Esc> <C-\><C-n>
+vmap Y "+y
+nnoremap <Leader>nh :nohlsearch<CR>
 
 " Splitted navigation
 nnoremap <C-Q> <C-W>q
@@ -67,6 +74,7 @@ nnoremap <C-K> <C-W>k
 nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
 nnoremap <leader>v :vs<CR>
+nnoremap <leader>s :split<CR>
 nnoremap <C-space> <C-W>r
 
 " ======= Snippets code ============
