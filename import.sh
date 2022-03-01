@@ -25,7 +25,5 @@ cp -v ~/.config/ranger/rc.conf ${CONFIGDIR}/ranger
 # nvim
 mkdir -p ${CONFIGDIR}/nvim/
 cp -v ~/.config/nvim/init.vim ${CONFIGDIR}/nvim
-mkdir -p ${CONFIGDIR}/nvim/lua
-cp -rv ~/.config/nvim/lua/ ${CONFIGDIR}/nvim/lua
-mkdir -p ${CONFIGDIR}/nvim/vsnip
-cp -rv ~/.config/nvim/vsnip/ ${CONFIGDIR}/nvim/vsnip
+cp -rv ~/.config/nvim/lua/ ${CONFIGDIR}/nvim/
+cp -rv ~/.config/nvim/vsnip/ ${CONFIGDIR}/nvim/
