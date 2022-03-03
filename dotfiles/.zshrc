@@ -16,6 +16,8 @@ autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[cyan]%}%n%{$fg[cyan]%}:%{$fg[cyan]%}%M %{$fg[blue]%}%~%{$fg[red]%}]%{$fg[cyan]%}$%b "
 
 # Bash history
+mkdir -p ~/.cache/zsh
+touch -a ~/.cache/zsh/history
 export HISTFILE=~/.cache/zsh/history
 export HISTSIZE=32000
 export SAVEHIST=$HISTSIZE

@@ -10,7 +10,7 @@ call plug#begin()
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 " Colorscheme
-Plug 'mangeshrex/uwu.vim'
+Plug 'mangeshrex/uwu.vim' " todo: this is obsolete, checkout everblush
 " Git plugin
 Plug 'tpope/vim-fugitive'
 " Scala plugin
