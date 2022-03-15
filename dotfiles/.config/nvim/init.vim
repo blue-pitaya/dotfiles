@@ -1,33 +1,35 @@
-" Install vim-plug if not found
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-endif
+" Vim plug is required
+" Install it from https://github.com/junegunn/vim-plug
 
 " ======== Plugins ========
 call plug#begin()
+Plug 'kyazdani42/nvim-web-devicons' " for file icons and for trouble plugin icons
+Plug 'nvim-lua/plenary.nvim' " required for telescope and i think some other plugin
+" Status bar
+Plug 'nvim-lualine/lualine.nvim'
 " Telescope (fuzzy finder)
-Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-" Colorscheme
-Plug 'mangeshrex/uwu.vim' " todo: this is obsolete, checkout everblush
 " Git plugin
 Plug 'tpope/vim-fugitive'
-" Scala plugin
+" LSP config
+Plug 'neovim/nvim-lspconfig'
+" LSP error display
+Plug 'folke/trouble.nvim'
+" Scala plugin (syntax, lsp, code actions and more)
 Plug 'scalameta/nvim-metals'
-" Vue plugin
+" Vue syntax highlight
 Plug 'posva/vim-vue'
+" C++ syntax highlight
+Plug 'bfrg/vim-cpp-modern'
 " Autocompletion
 Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-vsnip' " This can be removed laters (i dont need support for snippets)
+Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/cmp-nvim-lsp'
 " Snippets
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 " File browser
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
-" todo: add nvim-dap later for debuggind options
 call plug#end()
 
 " ======== Lua-based config ========
@@ -35,6 +37,7 @@ lua require('lsp_rc')
 lua require('nvimtree_rc')
 lua require('telescope_rc')
 lua require('autocomplete_rc')
+lua require('statusbar_rc')
 
 " ======== Basic settings ========
 set mouse=a
@@ -53,7 +56,7 @@ set ignorecase
 set smartcase
 
 " ======== Colors ========
-colorscheme uwu
+colorscheme cplex
 
 hi Normal guibg=#0c0c0c
 hi Comment guifg=#555555
@@ -82,24 +85,20 @@ nnoremap <C-L> <C-W>l
 nnoremap <leader>v :vs<CR>
 nnoremap <leader>s :split<CR>
 nnoremap <C-space> <C-W>r
+nnoremap <CR> G
+
+" Vim fugitive
+nmap <leader>gs :Git<CR><C-w>8-
 
 " ======= Snippets code ============
-" Expand
-imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
-smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
-
-" Expand or jump
-imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-
+" No key for snippet extend because there is autocomplete now
 " Jump forward or backward
-imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-
-
 let g:vsnip_snippet_dir = "~/.config/nvim/vsnip"
 let g:vsnip_filetypes = {}
 let g:vsnip_filetypes.javascriptreact = ['javascript']
 let g:vsnip_filetypes.typescriptreact = ['typescript']
+
+imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'

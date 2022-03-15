@@ -62,7 +62,7 @@ cmp.setup({
         fallback()
       end
     end,
-    ["<C-k>"] = cmp.mapping({
+    ["<C-j>"] = cmp.mapping({
       i = function()
         if cmp.visible() then
           cmp.abort()

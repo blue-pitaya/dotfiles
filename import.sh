@@ -27,3 +27,4 @@ mkdir -p ${CONFIGDIR}/nvim/
 cp -v ~/.config/nvim/init.vim ${CONFIGDIR}/nvim
 cp -rv ~/.config/nvim/lua/ ${CONFIGDIR}/nvim/
 cp -rv ~/.config/nvim/vsnip/ ${CONFIGDIR}/nvim/
+cp -rv ~/.config/nvim/colors/ ${CONFIGDIR}/nvim/

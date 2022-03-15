@@ -13,7 +13,7 @@ export PATH="$PATH:$(yarn global bin)"
 
 # Enable colors and change prompt
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[cyan]%}%n%{$fg[cyan]%}:%{$fg[cyan]%}%M %{$fg[blue]%}%~%{$fg[red]%}]%{$fg[cyan]%}$%b "
+PS1="%B%{$fg[red]%}[%{$fg[green]%}%n%{$fg[green]%}:%{$fg[green]%}%M %{$fg[blue]%}%~%{$fg[red]%}]%{$fg[green]%}$%b "
 
 # Bash history
 mkdir -p ~/.cache/zsh
@@ -36,6 +36,8 @@ alias clip='xclip -selection clipboard'
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias sbt_NewScalaProject='sbt new scala/scala-seed.g8'
+alias hig='history 0 | grep'
+alias plvpn='sudo openvpn /etc/openvpn/client/ovpn_udp/pl137.nordvpn.com.udp.ovpn'
 
 # Fix java windows
 export _JAVA_AWT_WM_NONREPARENTING=1
