@@ -25,6 +25,10 @@ Plug 'bfrg/vim-cpp-modern'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/cmp-nvim-lsp'
+" Code actions
+Plug 'weilbith/nvim-code-action-menu'
+" Auto brackets
+Plug 'rstacruz/vim-closer'
 " Snippets
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'

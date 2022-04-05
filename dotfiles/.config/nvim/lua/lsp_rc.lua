@@ -5,7 +5,12 @@ map("n", "gD", "<cmd>vsplit<CR><cmd>lua vim.lsp.buf.definition()<CR>")
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
+map("n", "J", "<cmd>CodeActionMenu<CR>")
+map("n", "<Leader>j", "<cmd>lua vim.lsp.buf.rename()<CR>")
 vim.cmd([[autocmd FileType scala,sbt lua require("metals").initialize_or_attach({})]])
+-- Automatic formatting
+vim.cmd([[au BufWritePre *.scala lua vim.lsp.buf.formatting()]])
+
 
 -- Scala
 metals_config = require("metals").bare_config()

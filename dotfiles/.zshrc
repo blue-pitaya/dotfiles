@@ -52,3 +52,5 @@ bindkey "^[[P" delete-char
 
 # Gtk dark mode
 export GTK_THEME=Adwaita:dark
+
+source ~/.aliases

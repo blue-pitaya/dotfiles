@@ -153,4 +153,13 @@ hi! link TSLiteral            Literal
 hi! link TSURI                Identifier
 hi! link TSTag                Tag
 hi! link TSTagDelimiter       TagDelimiter
+
+" My colors
+hi! link markdownH1 Keyword
+hi! link markdownH1 Keyword
+hi! link markdownH2 Keyword
+hi! link markdownH3 Keyword
+hi! link markdownH4 Keyword
+hi! link markdownH5 Keyword
+hi! link markdownH6 Keyword
 "endOfFile
