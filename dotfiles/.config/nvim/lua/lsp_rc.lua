@@ -7,10 +7,12 @@ map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 map("n", "J", "<cmd>CodeActionMenu<CR>")
 map("n", "<Leader>j", "<cmd>lua vim.lsp.buf.rename()<CR>")
-vim.cmd([[autocmd FileType scala,sbt lua require("metals").initialize_or_attach({})]])
+map("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
+map("n", "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+map("i", "<C-K>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+
 -- Automatic formatting
 vim.cmd([[au BufWritePre *.scala lua vim.lsp.buf.formatting()]])
-
 
 -- Scala
 metals_config = require("metals").bare_config()
@@ -18,6 +20,13 @@ metals_config.settings = {
   showImplicitArguments = true,
   excludedPackages = { "akka.actor.typed.javadsl" },
 }
+
+metals_config.on_attach = function(client, bufnr)
+  require("metals").setup_dap()
+end
+
+
+vim.cmd([[autocmd FileType scala,sbt lua require("metals").initialize_or_attach(metals_config)]])
 
 -- Diagnostics plugin
 -- https://github.com/folke/trouble.nvim

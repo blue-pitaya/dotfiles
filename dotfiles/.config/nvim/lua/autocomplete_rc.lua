@@ -1,39 +1,22 @@
 local cmp = require("cmp")
+require('utils')
 
--- toggle cmp completion
-vim.g.cmp_toggle_flag = false -- initialize
-local normal_buftype = function()
-  return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
-end
-
-local toggle_completion = function()
+vim.g.cmp_toggle_flag = true -- autocompletion on by default
+function my_cmp_toggle()
   local ok, cmp = pcall(require, "cmp")
   if ok then
-    local next_cmp_toggle_flag = not vim.g.cmp_toggle_flag
-    if next_cmp_toggle_flag then
-      print("completion on")
-    else
-      print("completion off")
-    end
+    vim.g.cmp_toggle_flag = not vim.g.cmp_toggle_flag
     cmp.setup({
-      enabled = function()
-        vim.g.cmp_toggle_flag = next_cmp_toggle_flag
-        if next_cmp_toggle_flag then
-          return normal_buftype
-        else
-          return next_cmp_toggle_flag
-        end
-      end,
+      enabled = vim.g.cmp_toggle_flag,
     })
   else
     print("completion not available")
   end
 end
+map("n", "<leader>a", "<cmd>lua my_cmp_toggle()<cr>")
+map("i", "<C-n>", "<cmd>lua my_cmp_toggle()<cr>")
 
 cmp.setup({
-  completion = {
-    autocomplete = true
-  },
   sources = {
     { name = "nvim_lsp" },
     { name = "vsnip" },
@@ -43,41 +26,22 @@ cmp.setup({
       vim.fn["vsnip#anonymous"](args.body)
     end,
   },
+  window = {
+    completion = {
+      border = 'rounded',
+      scrollbar = '',
+    },
+    documentation = {
+      border = 'rounded',
+      scrollbar = '',
+    },
+  },
   mapping = {
-    ["<Tab>"] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      else
-        fallback()
-      end
-    end,
-    ["<S-Tab>"] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      else
-        fallback()
-      end
-    end,
-    ["<C-j>"] = cmp.mapping({
-      i = function()
-        if cmp.visible() then
-          cmp.abort()
-          toggle_completion()
-        else
-          cmp.complete()
-          toggle_completion()
-        end
-      end,
-    }), 
-    ["<CR>"] = cmp.mapping({
-      i = function(fallback)
-        if cmp.visible() then
-          cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-          toggle_completion()
-        else
-          fallback()
-        end
-      end,
-    }),
+    ['<tab>'] = cmp.mapping.select_next_item(),
+    ['<C-j>'] = cmp.mapping.select_next_item(),
+    ['<C-k>'] = cmp.mapping.select_prev_item(),
+    ['<C-h>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-l>'] = cmp.mapping.confirm({ select = true }),
   },
 })

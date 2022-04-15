@@ -6,6 +6,14 @@ mytheme.normal.c.fg = '#e4e4e4'
 mytheme.inactive.c.bg = '#303030'
 mytheme.inactive.c.fg = '#4e4e4e'
 
+local function autocomplete_status()
+  if vim.g.cmp_toggle_flag then
+    return "📝"
+  else
+    return ""
+  end
+end
+
 
 require('lualine').setup {
   options = {
@@ -18,13 +26,10 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {'mode'},
-    -- lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_b = {'diagnostics'},
     lualine_c = {{'filename', path = 1}}, -- 0 = just filename, 1 = relative path, 2 = absolute path
-    -- lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_x = {'filetype'},
-    -- lualine_y = {'progress'},
-    lualine_y = {},
+    lualine_y = {autocomplete_status},
     lualine_z = {'location'}
   },
   inactive_sections = {
