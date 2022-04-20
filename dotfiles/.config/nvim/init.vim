@@ -103,10 +103,10 @@ nnoremap <leader>v :vs<CR>
 nnoremap <leader>s :split<CR>
 nnoremap <C-space> <C-W>r
 nnoremap <CR> G
-nnoremap <C-W><C-W> <C-W>20+
+nnoremap <C-W><C-W> <C-W>69+
 
 " Vim fugitive
-nmap <leader>gs :Git<CR><C-w>8-
+nmap <leader>gs :Git<CR>
 
 " ======= Snippets code ============
 " No key for snippet extend because there is autocomplete now
@@ -132,3 +132,4 @@ nnoremap <silent> <leader>b :lua require'dap'.toggle_breakpoint()<CR>
 nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
 nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>
 command! -nargs=1 -complete=help H h <args> | only
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ''

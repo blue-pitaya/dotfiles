@@ -10,7 +10,9 @@ require('telescope').setup{
   defaults = {
     mappings = {
       i = {
-        ["<C-h>"] = "which_key"
+        ["<C-h>"] = "which_key",
+        ["<C-j>"] = "move_selection_next",
+        ["<C-k>"] = "move_selection_previous"
       }
     },
     file_ignore_patterns = { "project/target", "project/project", "target" }
