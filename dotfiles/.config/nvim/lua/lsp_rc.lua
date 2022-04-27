@@ -1,13 +1,13 @@
 require('utils')
 
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-map("n", "gD", "<cmd>vsplit<CR><cmd>lua vim.lsp.buf.definition()<CR>")
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
-map("n", "J", "<cmd>CodeActionMenu<CR>")
+map("n", "J", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 map("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
 map("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
+map("n", "<Leader>l", "<cmd>lua vim.lsp.codelens.run()<CR>")
 map("n", "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 map("i", "<C-K>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 
@@ -18,7 +18,7 @@ vim.cmd([[au BufWritePre *.scala lua vim.lsp.buf.formatting()]])
 metals_config = require("metals").bare_config()
 metals_config.settings = {
   showImplicitArguments = true,
-  excludedPackages = { "akka.actor.typed.javadsl" },
+  excludedPackages = { "akka.actor.typed.javadsl", "akka.stream.javadsl" },
 }
 
 metals_config.on_attach = function(client, bufnr)

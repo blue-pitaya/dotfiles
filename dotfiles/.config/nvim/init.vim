@@ -27,7 +27,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/cmp-nvim-lsp'
 " Code actions
-Plug 'weilbith/nvim-code-action-menu'
+Plug 'nvim-telescope/telescope-ui-select.nvim'
 " Debugger
 Plug 'mfussenegger/nvim-dap'
 " Auto brackets
