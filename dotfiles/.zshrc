@@ -38,6 +38,7 @@ alias ll='ls -la'
 alias sbt_NewScalaProject='sbt new scala/scala-seed.g8'
 alias hig='history 0 | grep'
 alias plvpn='sudo openvpn /etc/openvpn/client/ovpn_udp/pl137.nordvpn.com.udp.ovpn'
+alias pacman_remove_cache="sudo rm -r /var/cache/pacman/pkg"
 
 # Fix java windows
 export _JAVA_AWT_WM_NONREPARENTING=1

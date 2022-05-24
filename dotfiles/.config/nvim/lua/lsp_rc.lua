@@ -18,7 +18,7 @@ vim.cmd([[au BufWritePre *.scala lua vim.lsp.buf.formatting()]])
 metals_config = require("metals").bare_config()
 metals_config.settings = {
   showImplicitArguments = true,
-  excludedPackages = { "akka.actor.typed.javadsl", "akka.stream.javadsl" },
+  excludedPackages = { "akka.actor.typed.javadsl", "akka.stream.javadsl", "akka.http.javadsl" },
 }
 
 metals_config.on_attach = function(client, bufnr)
@@ -74,6 +74,8 @@ local handlers =  {
 -- requires: yarn global add typescript typescript-language-server
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
 require'lspconfig'.tsserver.setup{ handlers=handlers }
+-- requires: yarn global add vls
+require'lspconfig'.vuels.setup { }
 
 -- To instead override globally
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview

@@ -20,6 +20,10 @@ Plug 'folke/trouble.nvim'
 Plug 'scalameta/nvim-metals'
 " Vue syntax highlight
 Plug 'posva/vim-vue'
+" Prettier
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] } 
 " C++ syntax highlight
 Plug 'bfrg/vim-cpp-modern'
 " Autocompletion
@@ -54,6 +58,7 @@ lua require('telescope_rc')
 lua require('autocomplete_rc')
 lua require('statusbar_rc')
 lua require('sidebar_rc')
+lua require('git_rc')
 
 " ======== Basic settings ========
 set mouse=a
@@ -133,3 +138,11 @@ nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
 nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>
 command! -nargs=1 -complete=help H h <args> | only
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+
+" Prettier config (to check)
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+
+let g:LanguageClient_serverCommands = {
+    \ 'vue': ['vls']
+    \ }

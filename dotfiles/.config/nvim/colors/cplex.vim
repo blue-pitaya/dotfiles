@@ -28,7 +28,6 @@ endif
 "-------------- Cplex highlights --------------
 highlight Function             guifg=#d7d7af guibg=NONE ctermfg=187 ctermbg=NONE term=NONE gui=NONE
 highlight Keyword              guifg=#87afff guibg=NONE ctermfg=167 ctermbg=NONE term=NONE gui=NONE
-highlight DiffDelete           guifg=#e2b2b2 guibg=NONE ctermfg=181 ctermbg=NONE term=NONE gui=NONE
 highlight StatusLineNC         guifg=#b2b2b2 guibg=#202020 ctermfg=249 ctermbg=234 term=NONE gui=NONE
 highlight Comment              guifg=#5f875f guibg=NONE ctermfg=241 ctermbg=NONE term=NONE gui=NONE
 highlight VisualNOS            guifg=#b2b2b2 guibg=NONE ctermfg=249 ctermbg=NONE term=NONE gui=NONE
@@ -44,9 +43,7 @@ highlight PmenuSel             guifg=#b2b2b2 guibg=#005f87 ctermfg=249 ctermbg=2
 highlight LineNr               guifg=#b2b2b2 guibg=NONE ctermfg=249 ctermbg=NONE term=NONE gui=NONE
 highlight Search               guifg=NONE guibg=#005f87 ctermfg=NONE ctermbg=24 term=NONE gui=NONE
 highlight Directory            guifg=#5fafff guibg=NONE ctermfg=75 ctermbg=NONE term=NONE gui=NONE
-highlight DiffAdd              guifg=#b2d2b2 guibg=NONE ctermfg=151 ctermbg=NONE term=NONE gui=NONE
 highlight Identifier           guifg=#e4e4e4 guibg=NONE ctermfg=254 ctermbg=NONE term=NONE gui=NONE
-highlight DiffChange           guifg=#e2e2b2 guibg=NONE ctermfg=254 ctermbg=NONE term=NONE gui=NONE
 highlight TabLine              guifg=#e4e4e4 guibg=#202020 ctermfg=254 ctermbg=234 term=NONE gui=NONE
 highlight PmenuThumb           guifg=NONE guibg=#005f87 ctermfg=NONE ctermbg=24 term=NONE gui=NONE
 highlight Type                 guifg=#5fafaf guibg=NONE ctermfg=72 ctermbg=NONE term=NONE gui=NONE
@@ -72,6 +69,9 @@ highlight Folded               guifg=#5fafff guibg=#585858 ctermfg=75 ctermbg=24
 highlight Boolean              guifg=#af87d7 guibg=NONE ctermfg=140 ctermbg=NONE term=NONE gui=NONE
 highlight ColorColumn          guifg=NONE guibg=#19191d ctermfg=NONE ctermbg=234 term=NONE gui=NONE
 highlight Repeat               guifg=#bf87d7 guibg=NONE ctermfg=140 ctermbg=NONE term=NONE gui=NONE
+highlight DiffDelete           guifg=NONE guibg=NONE ctermfg=NONE ctermbg=52 term=NONE gui=NONE
+highlight DiffAdd              guifg=NONE guibg=NONE ctermfg=NONE ctermbg=22 term=NONE gui=NONE
+highlight DiffChange           guifg=NONE guibg=NONE ctermfg=NONE ctermbg=234 term=NONE gui=NONE
 
 " generic highlight groups
 hi! link Title          Normal
