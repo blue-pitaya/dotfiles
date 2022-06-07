@@ -58,7 +58,7 @@ lua require('telescope_rc')
 lua require('autocomplete_rc')
 lua require('statusbar_rc')
 lua require('sidebar_rc')
-lua require('git_rc')
+lua require('keybindings')
 
 " ======== Basic settings ========
 set mouse=a
@@ -94,6 +94,7 @@ hi DiffText ctermbg=88
 noremap <C-S> :update<CR>
 inoremap <C-S> <Esc>:update<CR>
 map <space> <nop>
+map <CR> <nop>
 tnoremap <Esc> <C-\><C-n>
 vmap Y "+y
 nnoremap <Leader>nh :nohlsearch<CR>
@@ -107,7 +108,6 @@ nnoremap <C-L> <C-W>l
 nnoremap <leader>v :vs<CR>
 nnoremap <leader>s :split<CR>
 nnoremap <C-space> <C-W>r
-nnoremap <CR> G
 nnoremap <C-W><C-W> <C-W>69+
 
 " Vim fugitive
@@ -126,16 +126,7 @@ smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab
 imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
-" Temporary config
-nnoremap <silent> <F5> :lua require'dap'.continue()<CR>
-nnoremap <silent> <F10> :lua require'dap'.step_over()<CR>
-nnoremap <silent> <F11> :lua require'dap'.step_into()<CR>
-nnoremap <silent> <F12> :lua require'dap'.step_out()<CR>
-nnoremap <silent> <leader>b :lua require'dap'.toggle_breakpoint()<CR>
-" nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
-" nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
-nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
-nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>
+" Dev icons fix
 command! -nargs=1 -complete=help H h <args> | only
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
 
@@ -146,3 +137,11 @@ let g:prettier#autoformat_require_pragma = 0
 let g:LanguageClient_serverCommands = {
     \ 'vue': ['vls']
     \ }
+
+" Close all floating windows
+nnoremap <silent> <leader>zc :lua for _, win in ipairs(vim.api.nvim_list_wins()) do local config = vim.api.nvim_win_get_config(win); if config.relative ~= "" then vim.api.nvim_win_close(win, false); print('Closing window', win) end end<CR>
+
+" Set true color
+" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" set termguicolors

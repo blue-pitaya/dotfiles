@@ -1,16 +1,5 @@
 require('utils')
 
-map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
-map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
-map("n", "J", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-map("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
-map("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
-map("n", "<Leader>l", "<cmd>lua vim.lsp.codelens.run()<CR>")
-map("n", "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-map("i", "<C-K>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-
 -- Automatic formatting
 vim.cmd([[au BufWritePre *.scala lua vim.lsp.buf.formatting()]])
 

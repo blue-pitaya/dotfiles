@@ -13,8 +13,6 @@ function my_cmp_toggle()
     print("completion not available")
   end
 end
-map("n", "<leader>a", "<cmd>lua my_cmp_toggle()<cr>")
-map("i", "<C-n>", "<cmd>lua my_cmp_toggle()<cr>")
 
 cmp.setup({
   sources = {
