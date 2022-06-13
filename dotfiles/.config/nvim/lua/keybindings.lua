@@ -27,7 +27,8 @@ map("n", "<C-n>", ":NvimTreeToggle<CR>")
 map("n", "<Space><Space>", ":Telescope find_files<cr>") 
 map("n", "<Space>g", ":Telescope live_grep<cr>") 
 map("n", "<Space>b", ":Telescope buffers<cr>") 
-map("n", "<Space>n", ":Telescope file_browser<cr>") 
+map("n", "<Space>n", ":Telescope oldfiles<cr>") 
+map("n", ";", ":Telescope command_history<CR>")
 
 -- Debugging
 map("n", "<F5>", ":lua require'dap'.continue()<CR>")
@@ -35,7 +36,7 @@ map("n", "<F10>" , ":lua require'dap'.step_over()<CR>")
 map("n", "<F11>" , ":lua require'dap'.step_into()<CR>")
 map("n", "<F12>" , ":lua require'dap'.step_out()<CR>")
 map("n", "<leader>b" , ":lua require'dap'.toggle_breakpoint()<CR>")
-map("n", "<leader>t" , ":lua require'dap'.repl.open()<CR>")
+map("n", "<leader>t" , ":lua require'dap'.repl.toggle()<CR>")
 map("n", "<leader>l" , ":lua require'dap'.run_last()<CR>")
 map("n", "<leader>i" , ":lua require'dap.ui.widgets'.hover()<CR>")
 -- nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>

@@ -26,6 +26,8 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] } 
 " C++ syntax highlight
 Plug 'bfrg/vim-cpp-modern'
+" HOCON syntax highlight (Typesafe config files)
+Plug 'jvirtanen/vim-hocon'
 " Autocompletion
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
@@ -41,7 +43,6 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 " File browser
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'nvim-telescope/telescope-file-browser.nvim'
 " Tagbar
 Plug 'preservim/tagbar'
 Plug 'sidebar-nvim/sidebar.nvim'
@@ -76,6 +77,9 @@ set tabstop=2
 set ignorecase
 set smartcase
 
+" ======== Autocmds ========
+autocmd BufNewFile,BufRead *.conf set filetype=hocon
+
 " ======== Colors ========
 colorscheme cplex
 
@@ -105,6 +109,8 @@ nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
+nnoremap + <C-W>+
+nnoremap - <C-W>-
 nnoremap <leader>v :vs<CR>
 nnoremap <leader>s :split<CR>
 nnoremap <C-space> <C-W>r
