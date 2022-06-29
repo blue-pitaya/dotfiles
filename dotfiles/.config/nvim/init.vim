@@ -83,17 +83,6 @@ autocmd BufNewFile,BufRead *.conf set filetype=hocon
 " ======== Colors ========
 colorscheme cplex
 
-hi Normal guibg=#0c0c0c
-hi Comment guifg=#555555
-hi Visual guibg=#4a499c
-hi Error guibg=#7d0000 guifg=#cc9191
-hi ErrorMsg guifg=#ffffff guibg=#7d0000
-hi WarningMsg guifg=#d18828
-hi LineNr ctermfg=243
-hi VertSplit ctermfg=237 ctermbg=237
-hi Pmenu guibg=#113200
-hi DiffText ctermbg=88
-
 " ======== Key maps ========
 noremap <C-S> :update<CR>
 inoremap <C-S> <Esc>:update<CR>
@@ -102,6 +91,10 @@ map <CR> <nop>
 tnoremap <Esc> <C-\><C-n>
 vmap Y "+y
 nnoremap <Leader>nh :nohlsearch<CR>
+
+" Search and replace selected
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+nnoremap vil ^vg_
 
 " Splitted navigation
 nnoremap <C-Q> <C-W>q

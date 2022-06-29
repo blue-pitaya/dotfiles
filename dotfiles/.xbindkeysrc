@@ -7,11 +7,11 @@
    XF86AudioLowerVolume
 
 # Screenshot to clipboard
-"maim -s -q | xclip -selection clipboard -t image/png"
+"maim -s -q --hidecursor | xclip -selection clipboard -t image/png"
    Shift+Print
 
 # Screenshot to file
-"maim -s -q > $HOME/screenshots/$(date +%Y%m%d%H%M%S).png"
+"maim -s -q --hidecursor > $HOME/screenshots/$(date +%Y%m%d%H%M%S).png"
    Shift+Control+Print
 
 # For the benefit of emacs users: -*- shell-script -*-
