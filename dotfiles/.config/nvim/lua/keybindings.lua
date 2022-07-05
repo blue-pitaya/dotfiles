@@ -28,7 +28,7 @@ map("n", "<Space><Space>", ":Telescope find_files<cr>")
 map("n", "<Space>g", ":Telescope live_grep<cr>") 
 map("n", "<Space>b", ":Telescope buffers<cr>") 
 map("n", "<Space>n", ":Telescope oldfiles<cr>") 
-map("n", ";", ":Telescope command_history<CR>")
+map("n", "<Space>k", ":Telescope keymaps<cr>") 
 
 -- Debugging
 map("n", "<F5>", ":lua require'dap'.continue()<CR>")

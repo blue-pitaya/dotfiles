@@ -9,9 +9,12 @@ require('telescope').setup{
         ["<C-k>"] = "move_selection_previous"
       }
     },
-    file_ignore_patterns = { "project/target", "project/project", "target" }
+    file_ignore_patterns = { "project/target", "project/project", "target" },
+    path_display = {"smart"} 
   },
   pickers = {
+    find_files = {
+    }
   },
   extensions = {
     ["ui-select"] = {
