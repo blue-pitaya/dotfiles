@@ -59,12 +59,17 @@ local handlers =  {
   ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border }),
 }
 
+
 -- Typescrpt
 -- requires: yarn global add typescript typescript-language-server
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
 require'lspconfig'.tsserver.setup{ handlers=handlers }
--- requires: yarn global add vls
-require'lspconfig'.vuels.setup { }
+
+-- require: yarn global add @volar/vue-language-server
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#volar
+require'lspconfig'.volar.setup{
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+}
 
 -- To instead override globally
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
