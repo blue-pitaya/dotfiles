@@ -3,4 +3,5 @@
 # Headset must be connected and experimental feats must be enabled
 # https://wiki.archlinux.org/title/Bluetooth#Enabling_experimental_features
 
-upower --dump | grep -A3 'headset' | grep 'percentage' | tr -d -c 0-9 | sed -e 's/$/%/'
+BATTERY_PERCENT=upower --dump | grep -A3 'headset' | grep 'percentage' | tr -d -c 0-9 | sed -e 's/$/%/'
+[ -z "$BATTERY_PERCENT" ] && echo "-" || echo $BATTERY_PERCENT
