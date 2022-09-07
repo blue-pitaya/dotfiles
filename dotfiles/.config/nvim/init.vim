@@ -47,7 +47,6 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'preservim/tagbar'
 Plug 'sidebar-nvim/sidebar.nvim'
 Plug 'sidebar-nvim/sections-dap'
-Plug 'simrat39/symbols-outline.nvim'
 " Apps
 Plug 'itchyny/calendar.vim'
 call plug#end()

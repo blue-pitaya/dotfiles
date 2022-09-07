@@ -20,6 +20,8 @@ map("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 map("n", "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 map("i", "<C-K>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 
+map("n", "<leader>m", ":MetalsOrganizeImports<CR>")
+
 -- File explorer
 map("n", "<C-n>", ":NvimTreeToggle<CR>") 
 

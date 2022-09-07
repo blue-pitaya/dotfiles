@@ -11,6 +11,9 @@ export PATH="$PATH:/home/$USER/scripts"
 # Add yarn bins
 export PATH="$PATH:$(yarn global bin)"
 
+#Add coursier
+export PATH="$PATH:/home/$USER/.local/share/coursier/bin"
+
 # Enable colors and change prompt
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[green]%}%n%{$fg[green]%}:%{$fg[green]%}%M %{$fg[blue]%}%~%{$fg[red]%}]%{$fg[green]%}$%b "
@@ -38,6 +41,7 @@ alias ll='ls -la'
 alias sbt_NewScalaProject='sbt new scala/scala-seed.g8'
 alias hig='history 0 | grep'
 alias plvpn='sudo openvpn /etc/openvpn/client/ovpn_udp/pl137.nordvpn.com.udp.ovpn'
+alias devpn='sudo openvpn /etc/openvpn/client/ovpn_udp/de509.nordvpn.com.udp.ovpn'
 alias pacman_remove_cache="sudo rm -r /var/cache/pacman/pkg"
 
 # Fix java windows
