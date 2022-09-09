@@ -78,6 +78,9 @@ highlight DiffText             guifg=NONE guibg=NONE ctermfg=NONE ctermbg=19 ter
 highlight LspCodeLens          guifg=NONE guibg=NONE ctermfg=241 ctermbg=NONE term=NONE gui=NONE
 highlight DiffviewDiffDelete   guifg=NONE guibg=NONE ctermfg=NONE ctermbg=52 term=NONE gui=NONE
 
+" Scala
+highlight scalaKeywordModifier guifg=NONE guibg=NONE ctermfg=140 ctermbg=NONE term=NONE gui=NONE
+
 " generic highlight groups
 hi! link Title          Normal
 hi! link Todo           Repeat
@@ -167,4 +170,3 @@ hi! link markdownH3 Keyword
 hi! link markdownH4 Keyword
 hi! link markdownH5 Keyword
 hi! link markdownH6 Keyword
-"endOfFile

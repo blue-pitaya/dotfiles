@@ -43,3 +43,6 @@ map("n", "<leader>l" , ":lua require'dap'.run_last()<CR>")
 map("n", "<leader>i" , ":lua require'dap.ui.widgets'.hover()<CR>")
 -- nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 -- nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+
+-- Other
+map("n", "<leader>ec", ":echo synIDattr(synIDtrans(synID(line(\".\"), col(\".\"), 1)), \"name\")<CR>") --print color name under cursor
