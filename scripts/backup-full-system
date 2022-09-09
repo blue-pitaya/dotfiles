@@ -15,4 +15,4 @@ done
 # rsync must be installed ofc
 # external drive must be mounted to /mnt.
 
-sudo rsync -aAXHv --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/home/*/.cache/mozilla/*","/home/*/.cache/BraveSoftware/*"} / /mnt
+sudo rsync -aAXHv --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/home/*/.cache/mozilla/*","/home/*/.cache/BraveSoftware/*"} / /mnt/backup

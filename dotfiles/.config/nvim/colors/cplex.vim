@@ -65,17 +65,18 @@ highlight SpecialKey           guifg=#b2b2b2 guibg=NONE ctermfg=249 ctermbg=NONE
 highlight Normal               guifg=#e4e4e4 guibg=#0c0c0c ctermfg=254 ctermbg=NONE term=NONE gui=NONE
 highlight Float                guifg=#afd7af guibg=NONE ctermfg=151 ctermbg=NONE term=NONE gui=NONE
 highlight IncSearch            guifg=NONE guibg=#5f5f00 ctermfg=NONE ctermbg=58 term=NONE gui=NONE
-highlight Folded               guifg=#5fafff guibg=#585858 ctermfg=75 ctermbg=240 term=NONE gui=NONE
+highlight Folded               guifg=#5fafff guibg=#585858 ctermfg=239 ctermbg=234 term=NONE gui=NONE
 highlight Boolean              guifg=#af87d7 guibg=NONE ctermfg=140 ctermbg=NONE term=NONE gui=NONE
 highlight ColorColumn          guifg=NONE guibg=#19191d ctermfg=NONE ctermbg=234 term=NONE gui=NONE
 highlight Repeat               guifg=#bf87d7 guibg=NONE ctermfg=140 ctermbg=NONE term=NONE gui=NONE
 highlight DiffDelete           guifg=NONE guibg=NONE ctermfg=NONE ctermbg=52 term=NONE gui=NONE
 highlight DiffAdd              guifg=NONE guibg=NONE ctermfg=NONE ctermbg=22 term=NONE gui=NONE
-highlight DiffChange           guifg=NONE guibg=NONE ctermfg=NONE ctermbg=234 term=NONE gui=NONE
+highlight DiffChange           guifg=NONE guibg=NONE ctermfg=NONE ctermbg=235 term=NONE gui=NONE
 highlight ErrorMsg             guifg=#ffffff guibg=#7d0000 ctermfg=NONE ctermbg=234 term=NONE gui=NONE 
 highlight WarningMsg           guifg=#d18828 guibg=NONE ctermfg=NONE ctermbg=234 term=NONE gui=NONE 
-highlight DiffText             guifg=NONE guibg=NONE ctermfg=NONE ctermbg=88 term=NONE gui=NONE 
+highlight DiffText             guifg=NONE guibg=NONE ctermfg=NONE ctermbg=19 term=NONE gui=NONE 
 highlight LspCodeLens          guifg=NONE guibg=NONE ctermfg=241 ctermbg=NONE term=NONE gui=NONE
+highlight DiffviewDiffDelete   guifg=NONE guibg=NONE ctermfg=NONE ctermbg=52 term=NONE gui=NONE
 
 " generic highlight groups
 hi! link Title          Normal

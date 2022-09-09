@@ -59,6 +59,7 @@ lua require('autocomplete_rc')
 lua require('statusbar_rc')
 lua require('sidebar_rc')
 lua require('keybindings')
+lua require('diffview_rc')
 
 " ======== Basic settings ========
 set mouse=a
