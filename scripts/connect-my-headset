@@ -1,0 +1,5 @@
+#!/bin/sh
+
+bluetoothctl select 04:42:1A:5A:20:63 > /dev/null
+bluetoothctl connect F4:BC:DA:93:FA:CA > /dev/null
+echo "Connecting..."

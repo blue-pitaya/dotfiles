@@ -3,6 +3,9 @@ export EDITOR='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
 
+# My envs
+source ~/.myenvs
+
 # Useful envs
 export MYRC='~/.zshrc'
 

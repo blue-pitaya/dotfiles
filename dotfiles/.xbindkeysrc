@@ -1,10 +1,10 @@
 # Increase volume
-"amixer set Master 5%+ ; pkill -RTMIN+10 dwmblocks"
-   XF86AudioRaiseVolume
+# "amixer set Master 5%+ ; pkill -RTMIN+10 dwmblocks"
+#    XF86AudioRaiseVolume
 
 # Lower volume
-"amixer set Master 5%- ; pkill -RTMIN+10 dwmblocks"
-   XF86AudioLowerVolume
+# "amixer set Master 5%- ; pkill -RTMIN+10 dwmblocks"
+#    XF86AudioLowerVolume
 
 # Screenshot to clipboard
 "maim -s -q --hidecursor | xclip -selection clipboard -t image/png"
