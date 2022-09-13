@@ -1,5 +1,5 @@
 #!/bin/sh
 
-bluetoothctl select 04:42:1A:5A:20:63 > /dev/null
-bluetoothctl connect F4:BC:DA:93:FA:CA > /dev/null
+bluetoothctl select $BLUETOOTH_CONTROLLER_MAC > /dev/null
+bluetoothctl connect $MY_HEADSET_MAC > /dev/null
 echo "Connecting..."
