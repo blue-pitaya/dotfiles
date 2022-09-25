@@ -16,6 +16,9 @@ xbindkeys --poll-rc
 # Remap caps lock to escape (who really needs caps lock?)
 setxkbmap -option caps:escape
 
+# Enable numpad
+numlockx &
+
 # Start pulseaudio
 pulseaudio --start --log-target=syslog
 

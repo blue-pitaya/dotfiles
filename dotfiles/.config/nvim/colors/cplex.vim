@@ -77,6 +77,8 @@ highlight WarningMsg           guifg=#d18828 guibg=NONE ctermfg=NONE ctermbg=234
 highlight DiffText             guifg=NONE guibg=NONE ctermfg=NONE ctermbg=19 term=NONE gui=NONE 
 highlight LspCodeLens          guifg=NONE guibg=NONE ctermfg=241 ctermbg=NONE term=NONE gui=NONE
 highlight DiffviewDiffDelete   guifg=NONE guibg=NONE ctermfg=NONE ctermbg=52 term=NONE gui=NONE
+highlight MatchParen           guifg=NONE guibg=NONE ctermfg=NONE ctermbg=58 term=NONE gui=NONE
+
 
 " Scala
 highlight scalaKeywordModifier guifg=NONE guibg=NONE ctermfg=140 ctermbg=NONE term=NONE gui=NONE
