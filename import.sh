@@ -32,3 +32,7 @@ cp -rv ~/.config/nvim/colors/ ${CONFIGDIR}/nvim/
 # zathura
 mkdir -p ${CONFIGDIR}/zathura/
 cp -v ~/.config/zathura/zathurarc ${CONFIGDIR}/zathura
+
+# cmus
+mkdir -p $CONFIGDIR/cmus/
+cp -v ~/.config/cmus/autosave $CONFIGDIR/cmus
