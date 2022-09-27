@@ -29,7 +29,7 @@ require('lualine').setup {
     lualine_b = {'diagnostics'},
     lualine_c = {{'filename', path = 1}}, -- 0 = just filename, 1 = relative path, 2 = absolute path
     lualine_x = {'filetype'},
-    lualine_y = {autocomplete_status},
+    lualine_y = {require'dap'.status},
     lualine_z = {'location'}
   },
   inactive_sections = {

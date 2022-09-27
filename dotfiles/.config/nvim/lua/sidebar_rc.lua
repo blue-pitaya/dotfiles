@@ -1,5 +1,6 @@
 require("sidebar-nvim").setup({
-  sections = { "buffers", require("dap-sidebar-nvim.breakpoints"), "symbols" },
+  update_interval = 300,
+  sections = { require("dap-sidebar-nvim.breakpoints"), "buffers", "symbols" },
   buffers = {
     icon = "",
     ignored_buffers = {}, -- ignore buffers by regex

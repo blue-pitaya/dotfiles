@@ -32,15 +32,21 @@ map("n", "<Space>b", ":Telescope buffers<cr>")
 map("n", "<Space>n", ":Telescope oldfiles<cr>") 
 map("n", "<Space>k", ":Telescope keymaps<cr>") 
 
+-- Sidebar
+map("n", "<C-B>", ":SidebarNvimToggle<CR>")
+
 -- Debugging
-map("n", "<F5>", ":lua require'dap'.continue()<CR>")
-map("n", "<F10>" , ":lua require'dap'.step_over()<CR>")
-map("n", "<F11>" , ":lua require'dap'.step_into()<CR>")
-map("n", "<F12>" , ":lua require'dap'.step_out()<CR>")
-map("n", "<leader>b" , ":lua require'dap'.toggle_breakpoint()<CR>")
+map("n", "<tab><tab>", ":lua require'dapui'.toggle()<CR>")
+map("n", "<tab>c", ":lua require'dap'.continue()<CR>")
+map("n", "<tab>s", ":lua require'dap'.close()<CR>")
+map("n", "<tab>ov" , ":lua require'dap'.step_over()<CR>")
+map("n", "<tab>in" , ":lua require'dap'.step_into()<CR>")
+map("n", "<tab>ou" , ":lua require'dap'.step_out()<CR>")
+map("n", "<tab>b" , ":lua require'dap'.toggle_breakpoint()<CR>")
+map("n", "<tab>tc" , ":lua require'dap'.run_to_cursor()<CR>")
 map("n", "<leader>t" , ":lua require'dap'.repl.toggle()<CR>")
 map("n", "<leader>l" , ":lua require'dap'.run_last()<CR>")
-map("n", "<leader>i" , ":lua require'dap.ui.widgets'.hover()<CR>")
+map("n", "<tab>h" , ":lua require'dap.ui.widgets'.hover()<CR>")
 -- nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 -- nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 

@@ -36,6 +36,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 " Debugger
 Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
 " Auto brackets
 Plug 'jiangmiao/auto-pairs'
 " Snippets
@@ -60,6 +61,7 @@ lua require('statusbar_rc')
 lua require('sidebar_rc')
 lua require('keybindings')
 lua require('diffview_rc')
+lua require('dap_rc')
 
 " ======== Basic settings ========
 set mouse=a
