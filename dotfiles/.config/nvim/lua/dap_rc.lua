@@ -44,10 +44,9 @@ require("dapui").setup({
     --},
     {
       elements = {
-        "breakpoints",
         "scopes",
       },
-      size = 0.25, -- 25% of total lines
+      size = 0.5, -- 25% of total lines
       position = "bottom",
     },
   },
@@ -80,4 +79,15 @@ require("dapui").setup({
     max_type_length = nil, -- Can be integer or nil.
     max_value_lines = 100, -- Can be integer or nil.
   }
+})
+
+-- Colors
+vim.api.nvim_create_augroup("DapUiColors", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+    group = "DapUiColors",
+    pattern = { "dapui_scopes" },
+    command = [[
+    syn match Debug /^.*=/
+    match Constant /\".*\"/
+    ]],
 })
