@@ -14,6 +14,9 @@ require('telescope').setup{
   },
   pickers = {
     find_files = {
+    },
+    buffers = {
+      sort_lastused = true
     }
   },
   extensions = {
