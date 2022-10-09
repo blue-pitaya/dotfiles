@@ -1,7 +1,7 @@
 require('utils')
 
 -- Automatic formatting
-vim.cmd([[au BufWritePre *.scala lua vim.lsp.buf.formatting()]])
+vim.cmd([[au BufWritePre *.scala lua vim.lsp.buf.formatting_sync()]])
 
 -- Scala
 metals_config = require("metals").bare_config()
