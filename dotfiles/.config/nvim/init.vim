@@ -62,6 +62,7 @@ lua require('sidebar_rc')
 lua require('keybindings')
 lua require('diffview_rc')
 lua require('dap_rc')
+lua require('misc')
 
 " ======== Basic settings ========
 set mouse=a
@@ -87,6 +88,7 @@ colorscheme cplex
 
 " ======== Key maps ========
 noremap <C-S> :update<CR>
+nnoremap S :wa<CR>
 inoremap <C-S> <Esc>:update<CR>
 map <space> <nop>
 map <CR> <nop>

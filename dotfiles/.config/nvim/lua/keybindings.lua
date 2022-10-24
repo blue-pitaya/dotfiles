@@ -17,7 +17,7 @@ map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 map("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references({show_line=false})<CR>") 
 
 map("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
-map("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
+map("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>")
 map("n", "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 map("i", "<C-K>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 

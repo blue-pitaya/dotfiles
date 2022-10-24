@@ -99,7 +99,7 @@ require("diffview").setup({
       ["<leader>cb"] = actions.conflict_choose("base"),   -- Choose the BASE version of a conflict
       ["<leader>ca"] = actions.conflict_choose("all"),    -- Choose all the versions of a conflict
       ["dx"]         = actions.conflict_choose("none"),   -- Delete the conflict region
-      ["a"]          = actions.toggle_stage_entry, -- Stage / unstage the selected entry.
+      ["L"]          = actions.toggle_stage_entry, -- Stage / unstage the selected entry.
     },
     diff1 = { --[[ Mappings in single window diff layouts ]] },
     diff2 = { --[[ Mappings in 2-way diff layouts ]] },
