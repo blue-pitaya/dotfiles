@@ -6,6 +6,7 @@ vim.cmd([[au BufWritePre *.scala lua vim.lsp.buf.formatting_sync()]])
 -- Scala
 metals_config = require("metals").bare_config()
 metals_config.settings = {
+  serverVersion = '0.11.2', -- newer versions dont work
   showImplicitArguments = true,
   excludedPackages = { "akka.actor.typed.javadsl", "akka.stream.javadsl", "akka.http.javadsl" },
 }
