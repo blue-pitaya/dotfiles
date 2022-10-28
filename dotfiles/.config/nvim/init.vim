@@ -1,6 +1,5 @@
 " Vim plug is required
 " Install it from https://github.com/junegunn/vim-plug
-
 " ======== Plugins ========
 call plug#begin()
 Plug 'kyazdani42/nvim-web-devicons' " for file icons and for trouble plugin icons
@@ -8,6 +7,7 @@ Plug 'nvim-lua/plenary.nvim' " required for telescope and i think some other plu
 " Status bar
 Plug 'nvim-lualine/lualine.nvim'
 " Telescope (fuzzy finder)
+" Needs: fd and rg (ripgrep) packages installed to work properly
 Plug 'nvim-telescope/telescope.nvim'
 " Git plugin
 Plug 'tpope/vim-fugitive'

@@ -1,4 +1,4 @@
-feh --no-fehbg --bg-fill '/home/kodus/wallpapers/astro.jpg'
+feh --no-fehbg --bg-fill '/home/kodus/wallpapers/simple.png'
 # gifview --animate --new-window root Pictures/wallbig.gif
 # xwinwrap -fs -fdt -ni -b -nf -un -o 1.0 -debug -- gifview -w WID ~/Pictures/wallbig.gif -a
 

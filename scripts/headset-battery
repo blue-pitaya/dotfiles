@@ -2,6 +2,7 @@
 
 # Headset must be connected and experimental feats must be enabled
 # https://wiki.archlinux.org/title/Bluetooth#Enabling_experimental_features
+# Also upower must be installed
 
 case $BLOCK_BUTTON in
 	1) connect-my-headset ;;
