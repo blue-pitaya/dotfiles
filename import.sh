@@ -36,3 +36,11 @@ cp -v ~/.config/zathura/zathurarc ${CONFIGDIR}/zathura
 # cmus
 mkdir -p $CONFIGDIR/cmus/
 cp -v ~/.config/cmus/autosave $CONFIGDIR/cmus
+
+#gtk
+mkdir -p $CONFIGDIR/gtk-3.0/
+cp -v ~/.config/gtk-3.0/settings.ini $CONFIGDIR/gtk-3.0
+
+#htop
+mkdir -p $CONFIGDIR/htop/
+cp -v ~/.config/htop/htoprc $CONFIGDIR/htop
