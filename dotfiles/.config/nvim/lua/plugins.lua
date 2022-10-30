@@ -53,7 +53,5 @@ return require('packer').startup(function(use)
   use 'preservim/tagbar'
   use 'sidebar-nvim/sidebar.nvim'
   use 'sidebar-nvim/sections-dap'
-  -- Apps
-  use 'itchyny/calendar.vim'
 end)
 
