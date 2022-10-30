@@ -1,58 +1,8 @@
-" Vim plug is required
-" Install it from https://github.com/junegunn/vim-plug
-" ======== Plugins ========
-call plug#begin()
-Plug 'kyazdani42/nvim-web-devicons' " for file icons and for trouble plugin icons
-Plug 'nvim-lua/plenary.nvim' " required for telescope and i think some other plugin
-" Status bar
-Plug 'nvim-lualine/lualine.nvim'
-" Telescope (fuzzy finder)
-" Needs: fd and rg (ripgrep) packages installed to work properly
-Plug 'nvim-telescope/telescope.nvim'
-" Git plugin
-Plug 'tpope/vim-fugitive'
-Plug 'sindrets/diffview.nvim'
-" LSP config
-Plug 'neovim/nvim-lspconfig'
-" LSP error display
-Plug 'folke/trouble.nvim'
-" Scala plugin (syntax, lsp, code actions and more)
-Plug 'scalameta/nvim-metals'
-" Vue syntax highlight
-Plug 'posva/vim-vue'
-" Prettier
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] } 
-" C++ syntax highlight
-Plug 'bfrg/vim-cpp-modern'
-" HOCON syntax highlight (Typesafe config files)
-Plug 'jvirtanen/vim-hocon'
-" Autocompletion
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/cmp-nvim-lsp'
-" Code actions
-Plug 'nvim-telescope/telescope-ui-select.nvim'
-" Debugger
-Plug 'mfussenegger/nvim-dap'
-Plug 'rcarriga/nvim-dap-ui'
-" Auto brackets
-Plug 'jiangmiao/auto-pairs'
-" Snippets
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-" File browser
-Plug 'kyazdani42/nvim-tree.lua'
-" Tagbar
-Plug 'preservim/tagbar'
-Plug 'sidebar-nvim/sidebar.nvim'
-Plug 'sidebar-nvim/sections-dap'
-" Apps
-Plug 'itchyny/calendar.vim'
-call plug#end()
+" Packer required: https://github.com/wbthomason/packer.nvim
 
 " ======== Lua-based config ========
+lua require('plugins')
+
 lua require('lsp_rc')
 lua require('nvimtree_rc')
 lua require('telescope_rc')
