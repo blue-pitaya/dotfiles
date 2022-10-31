@@ -13,6 +13,7 @@ lua require('keybindings')
 lua require('diffview_rc')
 lua require('dap_rc')
 lua require('snippy_rc')
+"lua require('noice_rc')
 lua require('misc')
 
 " ======== Basic settings ========
@@ -21,6 +22,7 @@ set number
 set encoding=utf-8
 set updatetime=750
 set nomodeline
+set termguicolors
 
 " Change tab to spaces
 set expandtab
@@ -84,8 +86,3 @@ nnoremap <silent> <leader>zc :lua for _, win in ipairs(vim.api.nvim_list_wins())
 
 " Quickfix window (same when you exit telescope by ctrl+q) keybinding to open file under cursors
 autocmd FileType qf nnoremap <buffer> o :.cc<CR>
-
-" Set true color
-" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-" set termguicolors

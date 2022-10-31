@@ -1,0 +1,5 @@
+snippet jsexporttoplevel
+	@JSExportTopLevel("${1:name}")
+  def ${1:name}(${2:}): Unit = {
+    Main.mainReducer.execute(${0:})
+  }

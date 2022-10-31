@@ -24,64 +24,128 @@ if !exists("g:clearBackground")
 	let g:clearBackground = 1
 endif
 
+let cNone='NONE'
+let c24='#005f87'
+let c19='#0000af'
+let c22='#005f00'
+let c38='#00afd7'
+let c52='#5f0000'
+let c58='#5f5f00'
+let c72='#5faf87'
+let c75='#5fafff'
+let c132='#af5f87'
+let c140='#af87d7'
+let c151='#afd7af'
+let c160='#d70000'
+let c167='#d75f5f'
+let c168='#d75f87'
+let c173='#d7875f'
+let c187='#d7d7af'
+let c234="#1c1c1c"
+let c235='#262626'
+let c237='#3a3a3a'
+let c238="#444444"
+let c239='#4e4e4e'
+let c240='#585858'
+let c241="#626262"
+let c243='#767676'
+let c249="#b2b2b2"
+let c254="#e4e4e4"
+
 " highlights are from 'genereateHighlights.vim' file in the config
 "-------------- Cplex highlights --------------
-highlight Function             guifg=#d7d7af guibg=NONE ctermfg=187 ctermbg=NONE term=NONE gui=NONE
-highlight Keyword              guifg=#87afff guibg=NONE ctermfg=167 ctermbg=NONE term=NONE gui=NONE
-highlight StatusLineNC         guifg=#b2b2b2 guibg=#202020 ctermfg=249 ctermbg=234 term=NONE gui=NONE
-highlight Comment              guifg=#555555 guibg=NONE ctermfg=241 ctermbg=NONE term=NONE gui=NONE
-highlight VisualNOS            guifg=#b2b2b2 guibg=NONE ctermfg=249 ctermbg=NONE term=NONE gui=NONE
-highlight PmenuSbar            guifg=NONE guibg=#444444 ctermfg=NONE ctermbg=238 term=NONE gui=NONE
-highlight Cursor               guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=reverse gui=reverse
-highlight Visual               guifg=NONE guibg=#4a499c ctermfg=NONE ctermbg=24 term=NONE gui=NONE
-highlight WildMenu             guifg=#b2b2b2 guibg=#202020 ctermfg=249 ctermbg=234 term=NONE gui=NONE
-highlight CursorLine           guifg=NONE guibg=#19191d ctermfg=NONE ctermbg=234 term=NONE gui=NONE
-highlight CursorLineNr         guifg=#e4e4e4 guibg=NONE ctermfg=254 ctermbg=NONE term=NONE gui=NONE
-highlight Special              guifg=#5fafff guibg=NONE ctermfg=38 ctermbg=NONE term=NONE gui=NONE
-highlight TabLineFill          guifg=NONE guibg=#202020 ctermfg=NONE ctermbg=234 term=NONE gui=NONE
-highlight PmenuSel             guifg=#b2b2b2 guibg=#005f87 ctermfg=249 ctermbg=24 term=NONE gui=NONE
-highlight LineNr               guifg=#b2b2b2 guibg=NONE ctermfg=243 ctermbg=NONE term=NONE gui=NONE
-highlight Search               guifg=NONE guibg=#005f87 ctermfg=NONE ctermbg=24 term=NONE gui=NONE
-highlight Directory            guifg=#5fafff guibg=NONE ctermfg=75 ctermbg=NONE term=NONE gui=NONE
-highlight Identifier           guifg=#e4e4e4 guibg=NONE ctermfg=254 ctermbg=NONE term=NONE gui=NONE
-highlight TabLine              guifg=#e4e4e4 guibg=#202020 ctermfg=254 ctermbg=234 term=NONE gui=NONE
-highlight PmenuThumb           guifg=NONE guibg=#005f87 ctermfg=NONE ctermbg=24 term=NONE gui=NONE
-highlight Type                 guifg=#5fafaf guibg=NONE ctermfg=72 ctermbg=NONE term=NONE gui=NONE
-highlight TabLineSel           guifg=#e4e4e4 guibg=#005f87 ctermfg=254 ctermbg=24 term=NONE gui=NONE
-highlight Delimiter            guifg=#e4e4e4 guibg=NONE ctermfg=254 ctermbg=NONE term=NONE gui=NONE
-highlight String               guifg=#d7875f guibg=NONE ctermfg=173 ctermbg=NONE term=NONE gui=NONE
-highlight VertSplit            guifg=#444444 guibg=NONE ctermfg=237 ctermbg=237 term=NONE gui=NONE
-highlight Error                guifg=#cc9191 guibg=#7d0000 ctermfg=160 ctermbg=NONE term=bold gui=bold
-highlight Number               guifg=#afd7af guibg=NONE ctermfg=151 ctermbg=NONE term=NONE gui=NONE
-highlight Pmenu                guifg=#b2b2b2 guibg=#113200 ctermfg=249 ctermbg=234 term=NONE gui=NONE
-highlight Include              guifg=#d75f87 guibg=NONE ctermfg=168 ctermbg=NONE term=NONE gui=NONE
-highlight Constant             guifg=#d7d7af guibg=NONE ctermfg=187 ctermbg=NONE term=NONE gui=NONE
-highlight NonText              guifg=#585858 guibg=NONE ctermfg=240 ctermbg=NONE term=NONE gui=NONE
-highlight Character            guifg=#d7875f guibg=NONE ctermfg=173 ctermbg=NONE term=NONE gui=NONE
-highlight SignColumn           guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=NONE gui=NONE
-highlight StatusLine           guifg=#b2b2b2 guibg=#202020 ctermfg=249 ctermbg=234 term=NONE gui=NONE
-highlight Operator             guifg=#af5f87 guibg=NONE ctermfg=132 ctermbg=NONE term=NONE gui=NONE
-highlight SpecialKey           guifg=#b2b2b2 guibg=NONE ctermfg=249 ctermbg=NONE term=NONE gui=NONE
-highlight Normal               guifg=#e4e4e4 guibg=#0c0c0c ctermfg=254 ctermbg=NONE term=NONE gui=NONE
-highlight Float                guifg=#afd7af guibg=NONE ctermfg=151 ctermbg=NONE term=NONE gui=NONE
-highlight IncSearch            guifg=NONE guibg=#5f5f00 ctermfg=NONE ctermbg=58 term=NONE gui=NONE
-highlight Folded               guifg=#5fafff guibg=#585858 ctermfg=239 ctermbg=234 term=NONE gui=NONE
-highlight Boolean              guifg=#af87d7 guibg=NONE ctermfg=140 ctermbg=NONE term=NONE gui=NONE
-highlight ColorColumn          guifg=NONE guibg=#19191d ctermfg=NONE ctermbg=234 term=NONE gui=NONE
-highlight Repeat               guifg=#bf87d7 guibg=NONE ctermfg=140 ctermbg=NONE term=NONE gui=NONE
-highlight DiffDelete           guifg=NONE guibg=NONE ctermfg=NONE ctermbg=52 term=NONE gui=NONE
-highlight DiffAdd              guifg=NONE guibg=NONE ctermfg=NONE ctermbg=22 term=NONE gui=NONE
-highlight DiffChange           guifg=NONE guibg=NONE ctermfg=NONE ctermbg=235 term=NONE gui=NONE
-highlight ErrorMsg             guifg=#ffffff guibg=#7d0000 ctermfg=NONE ctermbg=234 term=NONE gui=NONE 
-highlight WarningMsg           guifg=#d18828 guibg=NONE ctermfg=NONE ctermbg=234 term=NONE gui=NONE 
-highlight DiffText             guifg=NONE guibg=NONE ctermfg=NONE ctermbg=19 term=NONE gui=NONE 
-highlight LspCodeLens          guifg=NONE guibg=NONE ctermfg=241 ctermbg=NONE term=NONE gui=NONE
-highlight DiffviewDiffDelete   guifg=NONE guibg=NONE ctermfg=NONE ctermbg=52 term=NONE gui=NONE
-highlight MatchParen           guifg=NONE guibg=NONE ctermfg=NONE ctermbg=58 term=NONE gui=NONE
-
-
+let CustomColor = {} "
+let CustomColor['Function'] = {"guifg": c187}
+let CustomColor['Keyword'] = {"guifg": c167}
+let CustomColor['StatusLineNC'] = {"guifg": c249, "guibg": c234 }
+let CustomColor['Comment'] = {"guifg": c241, "guibg": cNone}
+let CustomColor['VisualNOS'] = {"guifg": c249, "guibg": cNone}
+let CustomColor['PmenuSbar'] = {"guifg": c238, "guibg": cNone}
+let CustomColor['Cursor'] = {"gui": "reverse", "term": "reverse"}
+let CustomColor['Visual'] = {"guifg": cNone, "guibg": c24}
+let CustomColor['WildMenu'] = {"guifg": c249, "guibg": c234}
+let CustomColor['CursorLine'] = {"guifg": cNone, "guibg": c234}
+let CustomColor['CursorLineNr'] = {"guifg": c254, "guibg": cNone}
+let CustomColor['Special'] = {"guifg": c38, "guibg": cNone}
+let CustomColor['TabLineFill'] = {"guifg": cNone, "guibg": c234}
+let CustomColor['PmenuSel'] = {"guifg": c249, "guibg": c24}
+let CustomColor['LineNr'] = {"guifg": c243, "guibg": cNone}
+let CustomColor['Search'] = {"guifg": cNone, "guibg": c24}
+let CustomColor['Directory'] = {"guifg": c75, "guibg": cNone}
+let CustomColor['Identifier'] = {"guifg": c254, "guibg": cNone}
+let CustomColor['TabLine'] = {"guifg": c254, "guibg": c234}
+let CustomColor['PmenuThumb'] = {"guifg": cNone, "guibg": c24}
+let CustomColor['Type'] = {"guifg": c72, "guibg": cNone}
+let CustomColor['TabLineSel'] = {"guifg": c254, "guibg": c24}
+let CustomColor['Delimiter'] = {"guifg": c254, "guibg": cNone}
+let CustomColor['String'] = {"guifg": c173, "guibg": cNone}
+let CustomColor['VertSplit'] = {"guifg": c237, "guibg": c237}
+let CustomColor['Error'] = {"guifg": c160, "guibg": cNone, "gui": 'bold'}
+let CustomColor['Number'] = {"guifg": c151, "guibg": cNone}
+let CustomColor['Pmenu'] = {"guifg": c249, "guibg": c234}
+let CustomColor['Include'] = {"guifg": c168, "guibg": cNone}
+let CustomColor['Constant'] = {"guifg": c187, "guibg": cNone}
+let CustomColor['NonText'] = {"guifg": c240, "guibg": cNone}
+let CustomColor['Character'] = {"guifg": c173, "guibg": cNone}
+let CustomColor['SignColumn'] = {"guifg": cNone, "guibg": cNone}
+let CustomColor['StatusLine'] = {"guifg": c249, "guibg": c234}
+let CustomColor['Operator'] = {"guifg": c132, "guibg": cNone}
+let CustomColor['SpecialKey'] = {"guifg": c249, "guibg": cNone}
+let CustomColor['Normal'] = {"guifg": c254, "guibg": cNone}
+let CustomColor['Float'] = {"guifg": c151, "guibg": cNone}
+let CustomColor['IncSearch'] = {"guifg": cNone, "guibg": c58}
+let CustomColor['Folded'] = {"guifg": c239, "guibg": c234}
+let CustomColor['Boolean'] = {"guifg": c140, "guibg": cNone}
+let CustomColor['ColorColumn'] = {"guifg": cNone, "guibg": c234}
+let CustomColor['Repeat'] = {"guifg": c140, "guibg": cNone}
+let CustomColor['DiffDelete'] = {"guifg": cNone, "guibg": c52}
+let CustomColor['DiffAdd'] = {"guifg": cNone, "guibg": c22}
+let CustomColor['DiffChange'] = {"guifg": cNone, "guibg": c235}
+let CustomColor['ErrorMsg'] = {"guifg": cNone, "guibg": c234}
+let CustomColor['WarningMsg'] = {"guifg": cNone, "guibg": c234}
+let CustomColor['DiffText'] = {"guifg": cNone, "guibg": c19}
+let CustomColor['LspCodeLens'] = {"guifg": c241, "guibg": cNone}
+let CustomColor['DiffviewDiffDelete'] = {"guifg": cNone, "guibg": c52}
+let CustomColor['MatchParen'] = {"guifg": cNone, "guibg": c58}
 " Scala
-highlight scalaKeywordModifier guifg=NONE guibg=NONE ctermfg=140 ctermbg=NONE term=NONE gui=NONE
+let CustomColor['scalaKeywordModifier'] = {"guifg": c140, "guibg": cNone}
+
+for key in keys(CustomColor)
+    let s:colours = CustomColor[key]
+    if has_key(s:colours, 'gui')
+        let gui = s:colours['gui']
+    else
+        let gui='NONE'
+    endif
+    if has_key(s:colours, 'guifg')
+        let guifg = s:colours['guifg']
+    else
+        let guifg='NONE'
+    endif
+    if has_key(s:colours, 'guibg')
+        let guibg = s:colours['guibg']
+    else
+        let guibg='NONE'
+    endif
+    if has_key(s:colours, 'term')
+        let term = s:colours['term']
+    else
+        let term='NONE'
+    endif
+    if has_key(s:colours, 'ctermfg')
+        let ctermfg = s:colours['ctermfg']
+    else
+        let ctermfg='NONE'
+    endif
+    if has_key(s:colours, 'ctermbg')
+        let ctermbg = s:colours['ctermbg']
+    else
+        let ctermbg='NONE'
+    endif
+    if key =~ '^\k*$'
+        execute "hi ".key." term=".term." gui=".gui." ctermfg=".ctermfg." guifg=".guifg." ctermbg=".ctermbg." guibg=".guibg
+    endif
+endfor
 
 " generic highlight groups
 hi! link Title          Normal
