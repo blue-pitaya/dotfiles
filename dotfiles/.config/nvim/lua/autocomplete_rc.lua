@@ -15,13 +15,9 @@ function my_cmp_toggle()
 end
 
 cmp.setup({
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "vsnip" },
-  },
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      require('snippy').expand_snippet(args.body)
     end,
   },
   window = {
@@ -41,6 +37,10 @@ cmp.setup({
     ['<C-h>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<C-l>'] = cmp.mapping.confirm({ select = true }),
+  },
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "snippy" },
   },
   experimental = {
     ghost_text = true

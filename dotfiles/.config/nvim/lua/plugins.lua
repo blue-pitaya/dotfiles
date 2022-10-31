@@ -35,8 +35,8 @@ return require('packer').startup(function(use)
   use 'jvirtanen/vim-hocon'
   -- Autocompletion
   use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/cmp-nvim-lsp'
+  use 'dcampos/cmp-snippy'
   -- Code actions
   use 'nvim-telescope/telescope-ui-select.nvim'
   -- Debugger
@@ -45,8 +45,7 @@ return require('packer').startup(function(use)
   -- Auto brackets
   use 'jiangmiao/auto-pairs'
   -- Snippets
-  use 'hrsh7th/vim-vsnip'
-  use 'hrsh7th/vim-vsnip-integ'
+  use 'dcampos/nvim-snippy'
   -- File browser
   use 'kyazdani42/nvim-tree.lua'
   -- Tagbar

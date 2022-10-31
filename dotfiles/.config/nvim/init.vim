@@ -12,6 +12,7 @@ lua require('sidebar_rc')
 lua require('keybindings')
 lua require('diffview_rc')
 lua require('dap_rc')
+lua require('snippy_rc')
 lua require('misc')
 
 " ======== Basic settings ========
@@ -66,19 +67,6 @@ nnoremap <C-W><C-W> <C-W>69+
 " Vim fugitive
 nmap <leader>gs :Git<CR>
 
-" ======= Snippets code ============
-" No key for snippet extend because there is autocomplete now
-" Jump forward or backward
-let g:vsnip_snippet_dir = "~/.config/nvim/vsnip"
-let g:vsnip_filetypes = {}
-let g:vsnip_filetypes.javascriptreact = ['javascript']
-let g:vsnip_filetypes.typescriptreact = ['typescript']
-
-imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-
 " Dev icons fix
 command! -nargs=1 -complete=help H h <args> | only
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
@@ -94,9 +82,9 @@ let g:LanguageClient_serverCommands = {
 " Close all floating windows
 nnoremap <silent> <leader>zc :lua for _, win in ipairs(vim.api.nvim_list_wins()) do local config = vim.api.nvim_win_get_config(win); if config.relative ~= "" then vim.api.nvim_win_close(win, false); print('Closing window', win) end end<CR>
 
-" QUickfix window (same when you exit telescope by ctrl+q) keybinding to open
-" file under cursors
+" Quickfix window (same when you exit telescope by ctrl+q) keybinding to open file under cursors
 autocmd FileType qf nnoremap <buffer> o :.cc<CR>
+
 " Set true color
 " let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 " let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
