@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Works for current settings of zsh:
+# mkdir -p ~/.cache/zsh
+# touch -a ~/.cache/zsh/history
+# export HISTFILE=~/.cache/zsh/history
+# export HISTSIZE=32000
+# export SAVEHIST=$HISTSIZE
+# setopt SHARE_HISTORY
+# setopt EXTENDED_HISTORY
+
+cat $HISTFILE| tail -n2| head -n1| cut -d ';' -f 2-

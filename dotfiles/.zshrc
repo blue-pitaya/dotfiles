@@ -11,7 +11,7 @@ export MYRC='~/.zshrc'
 
 # Add my scrips dir
 export PATH="$PATH:/home/$USER/scripts"
-# Add yarn bins
+# Add yarn bins (unsafe if yarn dont exists)
 export PATH="$PATH:$(yarn global bin)"
 
 #Add coursier
@@ -37,15 +37,22 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+# Aliases file (must start with zsh shebang!!!)
+export ALIASES_FILE=~/.aliases
+if [ -e $ALIASES_FILE ]
+then
+    source $ALIASES_FILE
+else
+    echo "aliases file not found"
+fi
+
 # Useful aliases
 alias clip='xclip -selection clipboard'
 alias ls='ls --color=auto'
-alias ll='ls -la'
+alias ll='ls -lah'
 alias sbt_NewScalaProject='sbt new scala/scala-seed.g8'
 alias hig='history 0 | grep'
-alias plvpn='sudo openvpn /etc/openvpn/client/ovpn_udp/pl137.nordvpn.com.udp.ovpn'
-alias devpn='sudo openvpn /etc/openvpn/client/ovpn_udp/de509.nordvpn.com.udp.ovpn'
-alias pacman_remove_cache="sudo rm -r /var/cache/pacman/pkg"
+alias pacman_RemoveCache="sudo rm -r /var/cache/pacman/pkg"
 
 # Fix java windows
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -58,7 +65,7 @@ bindkey '^P' open_in_same_dir
 # Enable delete key
 bindkey "^[[P" delete-char
 
-# Gtk dark mode
+# Gtk dark mode (todo: check if it has effect when there is gtk3.0 settings ini)
 export GTK_THEME=Adwaita:dark
 
 # Command search by arrows, use already typed text as prefix in seach (vim like)

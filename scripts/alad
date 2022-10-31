@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# require last_cmd script and $ALIASES_FILE set
+
+LAST_CMD=$(last_cmd)
+
+echo "$1() { $LAST_CMD }" >> $ALIASES_FILE
+echo "Added $LAST_CMD to $ALIASES_FILE"

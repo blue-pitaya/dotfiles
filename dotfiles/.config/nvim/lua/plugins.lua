@@ -54,4 +54,3 @@ return require('packer').startup(function(use)
   use 'sidebar-nvim/sidebar.nvim'
   use 'sidebar-nvim/sections-dap'
 end)
-

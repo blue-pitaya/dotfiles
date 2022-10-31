@@ -18,6 +18,8 @@ cp -v ~/.inputrc $DOTFILES
 cp -v ~/.xbindkeysrc $DOTFILES
 cp -v ~/.xinitrc $DOTFILES
 
+cp -v ~/.aliases $DOTFILES
+
 # ranger
 mkdir -p ${CONFIGDIR}/ranger/
 cp -v ~/.config/ranger/rc.conf ${CONFIGDIR}/ranger
