@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# aladd like alias add
 # require last_cmd script and $ALIASES_FILE set
 
 LAST_CMD=$(last_cmd)

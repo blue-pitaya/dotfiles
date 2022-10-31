@@ -50,9 +50,9 @@ fi
 alias clip='xclip -selection clipboard'
 alias ls='ls --color=auto'
 alias ll='ls -lah'
-alias sbt_NewScalaProject='sbt new scala/scala-seed.g8'
+alias sbt_newScalaProject='sbt new scala/scala-seed.g8'
 alias hig='history 0 | grep'
-alias pacman_RemoveCache="sudo rm -r /var/cache/pacman/pkg"
+alias pacman_removeCache="sudo rm -r /var/cache/pacman/pkg"
 
 # Fix java windows
 export _JAVA_AWT_WM_NONREPARENTING=1
