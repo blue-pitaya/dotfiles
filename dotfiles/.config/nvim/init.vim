@@ -13,7 +13,7 @@ lua require('keybindings')
 lua require('diffview_rc')
 lua require('dap_rc')
 lua require('snippy_rc')
-"lua require('noice_rc')
+lua require('noice_rc')
 lua require('misc')
 
 " ======== Basic settings ========
