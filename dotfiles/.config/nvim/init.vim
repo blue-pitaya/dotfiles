@@ -1,21 +1,5 @@
 " Packer required: https://github.com/wbthomason/packer.nvim
 
-" ======== Lua-based config ========
-lua require('plugins')
-
-lua require('lsp_rc')
-lua require('nvimtree_rc')
-lua require('telescope_rc')
-lua require('autocomplete_rc')
-lua require('statusbar_rc')
-lua require('sidebar_rc')
-lua require('keybindings')
-lua require('diffview_rc')
-lua require('dap_rc')
-lua require('snippy_rc')
-lua require('noice_rc')
-lua require('misc')
-
 " ======== Basic settings ========
 set mouse=a
 set number
@@ -32,6 +16,22 @@ set tabstop=2
 " Case insensitive search unless capital char exists
 set ignorecase
 set smartcase
+
+" ======== Lua-based config ========
+lua require('plugins')
+
+lua require('lsp_rc')
+lua require('nvimtree_rc')
+lua require('telescope_rc')
+lua require('autocomplete_rc')
+lua require('statusbar_rc')
+lua require('sidebar_rc')
+lua require('keybindings')
+lua require('diffview_rc')
+lua require('dap_rc')
+lua require('snippy_rc')
+" lua require('noice_rc')
+lua require('misc')
 
 " ======== Autocmds ========
 autocmd BufNewFile,BufRead *.conf set filetype=hocon
