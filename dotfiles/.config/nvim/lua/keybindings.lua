@@ -30,8 +30,8 @@ map("n", "<C-n>", ":NvimTreeToggle<CR>")
 map("n", "<Space><Space>", ":Telescope find_files<cr>") 
 map("n", "<Space>g", ":Telescope live_grep<cr>") 
 map("n", "<Space>b", ":Telescope buffers<cr>") 
-map("n", "<Space>n", ":Telescope oldfiles<cr>") 
 map("n", "<Space>k", ":Telescope keymaps<cr>") 
+map("n", "<Space>n", ":Telescope lsp_dynamic_workspace_symbols<cr>") 
 
 -- Sidebar
 map("n", "<C-B>", ":SidebarNvimToggle<CR>")

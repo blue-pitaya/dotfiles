@@ -27,6 +27,12 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'diagnostics'},
+    --lualine_b = {
+    --  {'diagnostics',
+    --    sources = {'nvim_workspace_diagnostic'}
+    --    sections = {'error', 'warn'},
+    --  }
+    --},
     lualine_c = {{'filename', path = 1}}, -- 0 = just filename, 1 = relative path, 2 = absolute path
     lualine_x = {'filetype'},
     lualine_y = {require'dap'.status},

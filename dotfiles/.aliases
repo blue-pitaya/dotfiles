@@ -1,3 +1,4 @@
 #!/bin/zsh
 
 vim_nvimConfig() { cd ~/.config/nvim && vim }
+plvpn1() { sudo openvpn /etc/openvpn/client/ovpn_udp/pl137.nordvpn.com.udp.ovpn }

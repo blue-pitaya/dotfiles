@@ -42,9 +42,6 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-vim.cmd [[autocmd! ColorScheme * highlight NormalFloat ctermbg=235]]
-vim.cmd [[autocmd! ColorScheme * highlight FloatBorder ctermfg=239]]
-
 local border = {
       {"┏", "FloatBorder"},
       {"━", "FloatBorder"},
