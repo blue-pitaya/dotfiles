@@ -1,8 +1,25 @@
 require('utils')
 
+function vim.getVisualSelection()
+	vim.cmd('noau normal! "vy"')
+	local text = vim.fn.getreg('v')
+	vim.fn.setreg('v', {})
+
+	text = string.gsub(text, "\n", "")
+	if #text > 0 then
+		return text
+	else
+		return ''
+	end
+end
+
+-- General
+map('n', '<C-o>', '<C-o>zz')
+map('n', '<C-i>', '<C-i>zz')
+
 -- Autocompletion
 -- toggle
-map("n", "<leader>a", "<cmd>lua my_cmp_toggle()<cr>")
+-- map("n", "<leader>a", "<cmd>lua my_cmp_toggle()<cr>")
 
 -- Diffview
 map("n", "<Leader>do", ":DiffviewOpen<CR>")
@@ -32,6 +49,11 @@ map("n", "<Space>g", ":Telescope live_grep<cr>")
 map("n", "<Space>b", ":Telescope buffers<cr>") 
 map("n", "<Space>k", ":Telescope keymaps<cr>") 
 map("n", "<Space>n", ":Telescope lsp_dynamic_workspace_symbols<cr>") 
+
+vim.keymap.set('v', '<space>g', function()
+	local text = vim.getVisualSelection()
+	require('telescope.builtin').live_grep({ default_text = text })
+end, { noremap = true, silent = true })
 
 -- Sidebar
 map("n", "<C-B>", ":SidebarNvimToggle<CR>")
