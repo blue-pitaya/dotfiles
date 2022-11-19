@@ -52,6 +52,10 @@ return require('packer').startup(function(use)
   use 'preservim/tagbar'
   use 'sidebar-nvim/sidebar.nvim'
   use 'sidebar-nvim/sections-dap'
+  use {
+    'ggandor/leap.nvim',
+    requires = {"tpope/vim-repeat"}
+  }
   --Noice
   --use({
   --  "folke/noice.nvim",

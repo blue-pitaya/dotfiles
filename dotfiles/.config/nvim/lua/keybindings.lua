@@ -24,6 +24,7 @@ map('n', '<C-i>', '<C-i>zz')
 -- Diffview
 map("n", "<Leader>do", ":DiffviewOpen<CR>")
 map("n", "<Leader>dc", ":DiffviewClose<CR>")
+map("n", "<Leader>dh", ":DiffviewFileHistory %<CR>")
 
 -- LSP
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")

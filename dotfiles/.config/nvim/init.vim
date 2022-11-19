@@ -30,6 +30,7 @@ lua require('keybindings')
 lua require('diffview_rc')
 lua require('dap_rc')
 lua require('snippy_rc')
+lua require('leap_rc')
 " lua require('noice_rc')
 lua require('misc')
 
@@ -41,7 +42,7 @@ colorscheme cplex
 
 " ======== Key maps ========
 noremap <C-S> :update<CR>
-nnoremap S :wa<CR>
+"nnoremap S :wa<CR>
 inoremap <C-S> <Esc>:update<CR>
 map <space> <nop>
 map <CR> <nop>
