@@ -3,3 +3,7 @@ snippet jsexporttoplevel
   def ${1:name}(${2:}): Unit = {
     Main.mainReducer.execute(${0:})
   }
+snippet for
+	for {
+	  ${0:}
+	} yield ()

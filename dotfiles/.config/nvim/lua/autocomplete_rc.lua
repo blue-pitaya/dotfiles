@@ -39,8 +39,8 @@ cmp.setup({
     ['<C-l>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = {
-    { name = "nvim_lsp" },
     { name = "snippy" },
+    { name = "nvim_lsp" },
   },
   experimental = {
     ghost_text = true
