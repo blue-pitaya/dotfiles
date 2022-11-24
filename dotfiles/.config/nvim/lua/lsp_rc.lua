@@ -62,14 +62,15 @@ local handlers =  {
 
 -- Typescrpt and Vue
 -- require: yarn global add @volar/vue-language-server
+-- require: yarn global add typescript
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#volar
 
--- Volar config, you should specify path to tsserver yourself, take over mode didnt work good for me
+-- Volar config, you should specify path to tsserver yourself
 require'lspconfig'.volar.setup{
   filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
   init_options = {
     typescript = {
-      serverPath = os.getenv("HOME") .. '/.config/yarn/global/node_modules/typescript/lib/tsserverlibrary.js'
+      tsdk = os.getenv("HOME") .. '/.config/yarn/global/node_modules/typescript/lib'
     }
   }
 }
