@@ -82,3 +82,8 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts.border = opts.border or border
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
+
+
+-- Dockerfile
+-- require: npm install -g dockerfile-language-server-nodejs
+require'lspconfig'.dockerls.setup{}
