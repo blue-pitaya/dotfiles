@@ -56,6 +56,8 @@ return require('packer').startup(function(use)
     'ggandor/leap.nvim',
     requires = {"tpope/vim-repeat"}
   }
+  -- Nginx syntax highlight
+  use 'chr4/nginx.vim'
   --Noice
   --use({
   --  "folke/noice.nvim",
