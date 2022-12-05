@@ -2,17 +2,6 @@ local cmp = require("cmp")
 require('utils')
 
 vim.g.cmp_toggle_flag = true -- autocompletion on by default
-function my_cmp_toggle()
-  local ok, cmp = pcall(require, "cmp")
-  if ok then
-    vim.g.cmp_toggle_flag = not vim.g.cmp_toggle_flag
-    cmp.setup({
-      enabled = vim.g.cmp_toggle_flag,
-    })
-  else
-    print("completion not available")
-  end
-end
 
 cmp.setup({
   snippet = {

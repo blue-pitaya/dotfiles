@@ -38,6 +38,8 @@ lua require('misc')
 autocmd BufNewFile,BufRead *.conf set filetype=hocon
 
 " ======== Colors ========
+" This must be after loading all rc.lua files! Leap.nvim must load color
+" definitions first.
 colorscheme cplex
 
 " ======== Key maps ========

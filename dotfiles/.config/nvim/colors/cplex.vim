@@ -13,6 +13,8 @@ if !exists("g:clearBackground")
 endif
 
 let cNone='NONE'
+let cYellow='#ffff00'
+let cBlack='#000000'
 let c17='#00005f'
 let c24='#005f87'
 let c19='#0000af'
@@ -112,10 +114,14 @@ let CustomColor['DiffviewDiffDelete'] = {"guifg": cDarkRed, "guibg": cDarkRed}
 let CustomColor['MatchParen'] = {"guifg": cNone, "guibg": c58}
 " Scala
 let CustomColor['scalaKeywordModifier'] = {"guifg": c140, "guibg": cNone}
-" Nvim
+" NvimTree
 let CustomColor['NvimTreeFolderIcon'] = {"guifg": c186, "guibg": cNone}
 let CustomColor['NvimTreeGitDirty'] = {"guifg": c44, "guibg": cNone}
 let CustomColor['NvimTreeWindowPicker'] = {"guifg": c254, "guibg": c17, "gui": "bold"}
+" Leap.nvim
+let CustomColor['LeapLabelPrimary'] = {"guifg": cBlack, "guibg": cYellow, "gui": "bold"}
+
+
 
 for key in keys(CustomColor)
     let s:colours = CustomColor[key]

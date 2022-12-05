@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 function map(mode, lhs, rhs, opts)
 	local options = {noremap = true}
 	if opts then
@@ -5,3 +6,4 @@ function map(mode, lhs, rhs, opts)
 	end
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
+

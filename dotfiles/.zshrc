@@ -7,13 +7,13 @@ alias vimdiff='nvim -d'
 source ~/.myenvs
 
 # Useful envs
-export MYRC='~/.zshrc'
+export MYRC=~/.zshrc
+export MYNVIMRC=~/.config/nvim
 
 # Add my scrips dir
 export PATH="$PATH:/home/$USER/scripts"
 # Add yarn bins (unsafe if yarn dont exists)
 export PATH="$PATH:$(yarn global bin)"
-
 #Add coursier
 export PATH="$PATH:/home/$USER/.local/share/coursier/bin"
 

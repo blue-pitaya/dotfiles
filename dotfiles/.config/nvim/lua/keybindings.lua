@@ -17,10 +17,6 @@ end
 map('n', '<C-o>', '<C-o>zz')
 map('n', '<C-i>', '<C-i>zz')
 
--- Autocompletion
--- toggle
--- map("n", "<leader>a", "<cmd>lua my_cmp_toggle()<cr>")
-
 -- Diffview
 map("n", "<Leader>do", ":DiffviewOpen<CR>")
 map("n", "<Leader>dc", ":DiffviewClose<CR>")

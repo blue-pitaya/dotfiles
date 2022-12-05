@@ -4,14 +4,14 @@ require('utils')
 vim.cmd([[au BufWritePre *.scala lua vim.lsp.buf.format()]])
 
 -- Scala
-metals_config = require("metals").bare_config()
+local metals_config = require("metals").bare_config()
 metals_config.settings = {
   serverVersion = '0.11.2', -- newer versions dont work
   showImplicitArguments = true,
   excludedPackages = { "akka.actor.typed.javadsl", "akka.stream.javadsl", "akka.http.javadsl" },
 }
 
-metals_config.on_attach = function(client, bufnr)
+metals_config.on_attach = function()
   require("metals").setup_dap()
 end
 
@@ -42,6 +42,7 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+-- Custom border
 local border = {
       {"┏", "FloatBorder"},
       {"━", "FloatBorder"},
@@ -52,12 +53,8 @@ local border = {
       {"┗", "FloatBorder"},
       {"┃", "FloatBorder"},
 }
-
--- LSP settings (for overriding per client)
-local handlers =  {
-  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
-  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border }),
-}
+vim.lsp.with(vim.lsp.handlers.hover, {border = border})
+vim.lsp.with(vim.lsp.handlers.signature_help, {border = border })
 
 
 -- Typescrpt and Vue
@@ -87,3 +84,29 @@ end
 -- Dockerfile
 -- require: npm install -g dockerfile-language-server-nodejs
 require'lspconfig'.dockerls.setup{}
+
+
+-- Lua
+-- require lua-language-server, on arch: sudo pacman -S lua-language-server
+require'lspconfig'.sumneko_lua.setup {
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
