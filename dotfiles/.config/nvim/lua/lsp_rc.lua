@@ -4,7 +4,8 @@ require('utils')
 vim.cmd([[au BufWritePre *.scala lua vim.lsp.buf.format()]])
 
 -- Scala
-local metals_config = require("metals").bare_config()
+---@diagnostic disable-next-line: lowercase-global
+metals_config = require("metals").bare_config()
 metals_config.settings = {
   serverVersion = '0.11.2', -- newer versions dont work
   showImplicitArguments = true,

@@ -28,7 +28,7 @@ map("n", "J", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 map("n", "L", "<cmd>lua vim.lsp.codelens.run()<CR>")
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-map("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references({show_line=false})<CR>") 
+map("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references({show_line=false})<CR>")
 
 map("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
 map("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>")
@@ -38,15 +38,15 @@ map("i", "<C-K>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 map("n", "<leader>m", ":MetalsOrganizeImports<CR>")
 
 -- File explorer
-map("n", "<C-n>", ":NvimTreeToggle<CR>") 
+map("n", "<C-n>", ":NvimTreeToggle<CR>")
 
 -- Telescope
-map("n", "<Space><Space>", ":Telescope find_files<cr>") 
-map("n", "<Space>g", ":Telescope live_grep<cr>") 
-map("n", "<Space>r", ":Telescope resume<cr>") 
-map("n", "<Space>b", ":Telescope buffers<cr>") 
-map("n", "<Space>k", ":Telescope keymaps<cr>") 
-map("n", "<Space>n", ":Telescope lsp_dynamic_workspace_symbols<cr>") 
+map("n", "<Space><Space>", ":Telescope find_files<cr>")
+map("n", "<Space>g", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>")
+map("n", "<Space>r", ":Telescope resume<cr>")
+map("n", "<Space>b", ":Telescope buffers<cr>")
+map("n", "<Space>k", ":Telescope keymaps<cr>")
+map("n", "<Space>n", ":Telescope lsp_dynamic_workspace_symbols<cr>")
 
 vim.keymap.set('v', '<space>g', function()
 	local text = vim.getVisualSelection()

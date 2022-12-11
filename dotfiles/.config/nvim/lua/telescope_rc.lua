@@ -1,5 +1,7 @@
 require('utils')
 
+local lga_actions = require("telescope-live-grep-args.actions")
+
 require('telescope').setup{
   defaults = {
     mappings = {
@@ -10,7 +12,7 @@ require('telescope').setup{
       }
     },
     file_ignore_patterns = { "project/target", "project/project", "target" },
-    path_display = {"smart"} 
+    path_display = {"smart"}
   },
   pickers = {
     find_files = {
@@ -25,7 +27,6 @@ require('telescope').setup{
       require("telescope.themes").get_dropdown {
         -- even more opts
       }
-
       -- pseudo code / specification for writing custom displays, like the one
       -- for "codeactions"
       -- specific_opts = {
@@ -39,8 +40,22 @@ require('telescope').setup{
       --      do the following
       --   codeactions = false,
       -- }
+    },
+    live_grep_args = {
+      auto_quoting = true, -- enable/disable auto-quoting
+      -- define mappings, e.g.
+      mappings = { -- extend mappings
+        i = {
+          ["<C-l>"] = lga_actions.quote_prompt(),
+        },
+      },
+      -- ... also accepts theme settings, for example:
+      -- theme = "dropdown", -- use dropdown theme
+      -- theme = { }, -- use own theme spec
+      -- layout_config = { mirror=true }, -- mirror preview pane
     }
   }
 }
 
 require("telescope").load_extension("ui-select")
+require("telescope").load_extension("live_grep_args")

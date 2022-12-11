@@ -58,4 +58,6 @@ return require('packer').startup(function(use)
   }
   -- Nginx syntax highlight
   use 'chr4/nginx.vim'
+  -- Extended live grep on telescope
+  use "nvim-telescope/telescope-live-grep-args.nvim"
 end)

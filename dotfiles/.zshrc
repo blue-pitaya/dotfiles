@@ -51,7 +51,7 @@ alias clip='xclip -selection clipboard'
 alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias sbt_newScalaProject='sbt new scala/scala-seed.g8'
-alias hig='history 0 | grep'
+alias hig='history 0 | rg'
 alias pacman_removeCache="sudo rm -r /var/cache/pacman/pkg"
 
 # Fix java windows
