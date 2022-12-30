@@ -1,7 +1,9 @@
 #!/bin/zsh
 
 vim_nvimConfig() { cd $MYNVIMRC && vim }
-plvpn1() { sudo openvpn /etc/openvpn/client/ovpn_udp/pl137.nordvpn.com.udp.ovpn }
 kill_bloop() { ps -x | grep '[b]loop.Server' | awk '{$1=$1};1' | cut -d ' ' -f 1 | xargs kill }
 yay_listAurPackages() { yay -Qm }
-notes() { cd ~/notes && vim }
+notes() { cd $NOTES_PATH && vim }
+rr() { ranger }
+pacman_update() { sudo pacman -Syu }
+food() { cd $NOTES_PATH && vim food.md }

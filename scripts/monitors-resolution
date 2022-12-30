@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Will display resolutions of all monitors using xrandr output
+# Assumed installed: xrandr
+
+xrandr | perl -ne 'print "$2\n" if /\s(connected)\s(.*?)\s/'

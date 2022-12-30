@@ -1,5 +1,3 @@
-require('utils')
-
 -- Automatic formatting
 vim.cmd([[au BufWritePre *.scala lua vim.lsp.buf.format()]])
 
@@ -25,7 +23,6 @@ require("trouble").setup{
   height = 5, -- height of the trouble list when position is top or bottom
   padding = false, -- extra new line on top of the list
 }
-map("n", "<Leader><Leader>", "<cmd>TroubleToggle<CR>")
 
 -- Disable inline diagnostics (i have trouble plugin now so sajonara kompanieros)
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

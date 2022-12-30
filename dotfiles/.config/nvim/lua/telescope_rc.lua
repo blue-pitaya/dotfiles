@@ -1,9 +1,15 @@
-require('utils')
-
 local lga_actions = require("telescope-live-grep-args.actions")
 
 require('telescope').setup{
   defaults = {
+    layout_config = {
+      horizontal = {
+        height = { padding = 1 },
+        width = { padding = 8 },
+        prompt_position = "top",
+      },
+    },
+    wrap_results = true,
     mappings = {
       i = {
         ["<C-h>"] = "which_key",
@@ -12,7 +18,9 @@ require('telescope').setup{
       }
     },
     file_ignore_patterns = { "project/target", "project/project", "target" },
-    path_display = {"smart"}
+    path_display = {"smart"},
+    borderchars =  { "━", "┃", "━", "┃", "┏", "┓", "┛", "┗" },
+    sorting_strategy = "ascending"
   },
   pickers = {
     find_files = {

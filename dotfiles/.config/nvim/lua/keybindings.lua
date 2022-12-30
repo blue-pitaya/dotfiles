@@ -1,5 +1,49 @@
-require('utils')
+-- vim.keymap.set ref:
+-- https://github.com/neovim/neovim/pull/16591
 
+-- General
+vim.keymap.set('n', '<C-o>', '<C-o>zz')
+vim.keymap.set('n', '<C-i>', '<C-i>zz')
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- Paste text on visual without changing register content
+vim.keymap.set("x", "<leader>p", "\"_dP")
+
+-- Diffview
+vim.keymap.set("n", "<Leader>do", ":DiffviewOpen<CR>")
+vim.keymap.set("n", "<Leader>dc", ":DiffviewClose<CR>")
+vim.keymap.set("n", "<Leader>dh", ":DiffviewFileHistory %<CR>")
+
+-- LSP
+vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+vim.keymap.set("n", "J", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
+vim.keymap.set("n", "L", "<cmd>lua vim.lsp.codelens.run()<CR>")
+vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+vim.keymap.set("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references({show_line=false})<CR>")
+
+vim.keymap.set("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
+vim.keymap.set("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>")
+vim.keymap.set("n", "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+vim.keymap.set("i", "<C-K>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+
+vim.keymap.set("n", "<leader>m", ":MetalsOrganizeImports<CR>")
+
+-- File explorer
+vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
+
+-- Telescope
+vim.keymap.set("n", "<Space><Space>", ":Telescope find_files<cr>")
+vim.keymap.set("n", "<Space>g", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>")
+vim.keymap.set("n", "<Space>r", ":Telescope resume<cr>")
+vim.keymap.set("n", "<Space>b", ":Telescope buffers<cr>")
+vim.keymap.set("n", "<Space>k", ":Telescope keymaps<cr>")
+vim.keymap.set("n", "<Space>n", ":Telescope lsp_dynamic_workspace_symbols<cr>")
+vim.keymap.set("n", "<Space>d", ":Telescope diagnostics<cr>")
+vim.keymap.set("n", "<Space>h", ":Telescope help_tags<cr>")
+
+
+-- Telesopce: live grep selected text
 function vim.getVisualSelection()
 	vim.cmd('noau normal! "vy"')
 	local text = vim.fn.getreg('v')
@@ -12,63 +56,30 @@ function vim.getVisualSelection()
 		return ''
 	end
 end
-
--- General
-map('n', '<C-o>', '<C-o>zz')
-map('n', '<C-i>', '<C-i>zz')
-
--- Diffview
-map("n", "<Leader>do", ":DiffviewOpen<CR>")
-map("n", "<Leader>dc", ":DiffviewClose<CR>")
-map("n", "<Leader>dh", ":DiffviewFileHistory %<CR>")
-
--- LSP
-map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-map("n", "J", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
-map("n", "L", "<cmd>lua vim.lsp.codelens.run()<CR>")
-map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-map("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references({show_line=false})<CR>")
-
-map("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
-map("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>")
-map("n", "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-map("i", "<C-K>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-
-map("n", "<leader>m", ":MetalsOrganizeImports<CR>")
-
--- File explorer
-map("n", "<C-n>", ":NvimTreeToggle<CR>")
-
--- Telescope
-map("n", "<Space><Space>", ":Telescope find_files<cr>")
-map("n", "<Space>g", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>")
-map("n", "<Space>r", ":Telescope resume<cr>")
-map("n", "<Space>b", ":Telescope buffers<cr>")
-map("n", "<Space>k", ":Telescope keymaps<cr>")
-map("n", "<Space>n", ":Telescope lsp_dynamic_workspace_symbols<cr>")
-
 vim.keymap.set('v', '<space>g', function()
 	local text = vim.getVisualSelection()
 	require('telescope.builtin').live_grep({ default_text = text })
 end, { noremap = true, silent = true })
 
 -- Sidebar
-map("n", "<C-B>", ":SidebarNvimToggle<CR>")
+vim.keymap.set("n", "<C-B>", ":SidebarNvimToggle<CR>")
+
+-- Trouble
+vim.keymap.set("n", "<Leader><Leader>", "<cmd>TroubleToggle<CR>")
 
 -- Debugging
-map("n", "<leader>b" , ":lua require'dap'.toggle_breakpoint()<CR>")
-map("n", "<leader><space>", ":lua require'dap'.continue()<CR>")
-map("n", "<F10>", ":lua require'dap'.close();require'dapui'.close()<CR>")
-map("n", "<leader>l" , ":lua require'dap'.run_last()<CR>")
-map("n", "<leader>c" , ":lua require'dap'.run_to_cursor()<CR>")
+vim.keymap.set("n", "<leader>b" , ":lua require'dap'.toggle_breakpoint()<CR>")
+vim.keymap.set("n", "<leader><space>", ":lua require'dap'.continue()<CR>")
+vim.keymap.set("n", "<F10>", ":lua require'dap'.close();require'dapui'.close()<CR>")
+vim.keymap.set("n", "<leader>l" , ":lua require'dap'.run_last()<CR>")
+vim.keymap.set("n", "<leader>c" , ":lua require'dap'.run_to_cursor()<CR>")
 
-map("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
-map("n", "<F2>", ":lua require'dapui'.toggle()<CR>")
-map("n", "<leader>ov" , ":lua require'dap'.step_over()<CR>")
-map("n", "<leader>in" , ":lua require'dap'.step_into()<CR>")
-map("n", "<leader>ou" , ":lua require'dap'.step_out()<CR>")
-map("n", "<leader>t" , ":lua require'dap'.repl.toggle()<CR>")
+vim.keymap.set("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+vim.keymap.set("n", "<F2>", ":lua require'dapui'.toggle()<CR>")
+vim.keymap.set("n", "<leader>ov" , ":lua require'dap'.step_over()<CR>")
+vim.keymap.set("n", "<leader>in" , ":lua require'dap'.step_into()<CR>")
+vim.keymap.set("n", "<leader>ou" , ":lua require'dap'.step_out()<CR>")
+vim.keymap.set("n", "<leader>t" , ":lua require'dap'.repl.toggle()<CR>")
 -- nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 
 -- Other

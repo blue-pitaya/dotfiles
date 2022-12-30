@@ -43,6 +43,7 @@ let c238="#444444"
 let c239='#4e4e4e'
 let c240='#585858'
 let c241="#626262"
+let c242="#6c6c6c"
 let c243='#767676'
 let c249="#b2b2b2"
 let c254="#e4e4e4"
@@ -104,6 +105,9 @@ let CustomColor['LspCodeLens'] = {"guifg": c241, "guibg": cNone}
 " Border
 let CustomColor['NormalFloat'] = {"guifg": cNone, "guibg": cNone}
 let CustomColor['FloatBorder'] = {"guifg": c241, "guibg": cNone}
+" Telescope
+let CustomColor['TelescopeBorder'] = {"guifg": c242, "guibg": cNone}
+let CustomColor['TelescopeSelection'] = {"guibg": c237}
 " Diff
 let CustomColor['DiffChange'] = {"guifg": cNone, "guibg": c235}
 let CustomColor['DiffText'] = {"guifg": cNone, "guibg": cDarkBlue}

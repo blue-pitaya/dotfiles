@@ -1,5 +1,4 @@
 local cmp = require("cmp")
-require('utils')
 
 vim.g.cmp_toggle_flag = true -- autocompletion on by default
 
