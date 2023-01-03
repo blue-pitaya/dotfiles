@@ -25,13 +25,11 @@ lua require('nvimtree_rc')
 lua require('telescope_rc')
 lua require('autocomplete_rc')
 lua require('statusbar_rc')
-lua require('sidebar_rc')
 lua require('keybindings')
 lua require('diffview_rc')
 lua require('dap_rc')
 lua require('snippy_rc')
 lua require('leap_rc')
-" lua require('noice_rc')
 lua require('misc')
 
 " ======== Autocmds ========

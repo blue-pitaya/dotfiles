@@ -36,12 +36,12 @@ vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
 vim.keymap.set("n", "<Space><Space>", ":Telescope find_files<cr>")
 vim.keymap.set("n", "<Space>g", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>")
 vim.keymap.set("n", "<Space>r", ":Telescope resume<cr>")
-vim.keymap.set("n", "<Space>b", ":Telescope buffers<cr>")
+vim.keymap.set("n", "<Space>b", ":Telescope buffers initial_mode=normal<cr>")
 vim.keymap.set("n", "<Space>k", ":Telescope keymaps<cr>")
 vim.keymap.set("n", "<Space>n", ":Telescope lsp_dynamic_workspace_symbols<cr>")
-vim.keymap.set("n", "<Space>d", ":Telescope diagnostics<cr>")
+vim.keymap.set("n", "<Space>d", ":Telescope diagnostics initial_mode=normal<cr>")
 vim.keymap.set("n", "<Space>h", ":Telescope help_tags<cr>")
-
+vim.keymap.set("n", "<Space>s", ":Telescope git_status initial_mode=normal<cr>")
 
 -- Telesopce: live grep selected text
 function vim.getVisualSelection()

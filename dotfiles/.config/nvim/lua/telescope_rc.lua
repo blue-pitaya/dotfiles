@@ -5,7 +5,7 @@ require('telescope').setup{
     layout_config = {
       horizontal = {
         height = { padding = 1 },
-        width = { padding = 8 },
+        width = { padding = 12 },
         prompt_position = "top",
       },
     },
@@ -28,7 +28,7 @@ require('telescope').setup{
     buffers = {
       sort_mru = true,
       ignore_current_buffer = true
-    }
+    },
   },
   extensions = {
     ["ui-select"] = {

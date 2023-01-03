@@ -17,20 +17,12 @@ end
 
 vim.cmd([[autocmd FileType scala,sbt lua require("metals").initialize_or_attach(metals_config)]])
 
--- Diagnostics plugin
--- https://github.com/folke/trouble.nvim
-require("trouble").setup{
-  height = 5, -- height of the trouble list when position is top or bottom
-  padding = false, -- extra new line on top of the list
-}
-
--- Disable inline diagnostics (i have trouble plugin now so sajonara kompanieros)
+-- Disable inline diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
         virtual_text = false,
         update_in_insert = false,
         underline = true,
-        -- signs = false,
     }
 )
 
