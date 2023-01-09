@@ -7,3 +7,5 @@ notes() { cd $NOTES_PATH && vim }
 rr() { ranger }
 pacman_update() { sudo pacman -Syu }
 food() { cd $NOTES_PATH && vim food.md }
+scripts() { cd $SCRIPTS_PATH && vim }
+vim_zshrc() { vim ~/.zshrc }

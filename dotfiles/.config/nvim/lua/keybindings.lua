@@ -4,8 +4,8 @@
 -- General
 vim.keymap.set('n', '<C-o>', '<C-o>zz')
 vim.keymap.set('n', '<C-i>', '<C-i>zz')
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+--vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+--vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Paste text on visual without changing register content
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
@@ -36,10 +36,10 @@ vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
 vim.keymap.set("n", "<Space><Space>", ":Telescope find_files<cr>")
 vim.keymap.set("n", "<Space>g", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>")
 vim.keymap.set("n", "<Space>r", ":Telescope resume<cr>")
-vim.keymap.set("n", "<Space>b", ":Telescope buffers initial_mode=normal<cr>")
+vim.keymap.set("n", "<Space>j", ":Telescope buffers initial_mode=normal<cr>")
 vim.keymap.set("n", "<Space>k", ":Telescope keymaps<cr>")
 vim.keymap.set("n", "<Space>n", ":Telescope lsp_dynamic_workspace_symbols<cr>")
-vim.keymap.set("n", "<Space>d", ":Telescope diagnostics initial_mode=normal<cr>")
+vim.keymap.set("n", "<Leader><Leader>", ":Telescope diagnostics initial_mode=normal layout_strategy=vertical<cr>")
 vim.keymap.set("n", "<Space>h", ":Telescope help_tags<cr>")
 vim.keymap.set("n", "<Space>s", ":Telescope git_status initial_mode=normal<cr>")
 
@@ -61,11 +61,6 @@ vim.keymap.set('v', '<space>g', function()
 	require('telescope.builtin').live_grep({ default_text = text })
 end, { noremap = true, silent = true })
 
--- Sidebar
-vim.keymap.set("n", "<C-B>", ":SidebarNvimToggle<CR>")
-
--- Trouble
-vim.keymap.set("n", "<Leader><Leader>", "<cmd>TroubleToggle<CR>")
 
 -- Debugging
 vim.keymap.set("n", "<leader>b" , ":lua require'dap'.toggle_breakpoint()<CR>")
@@ -80,7 +75,3 @@ vim.keymap.set("n", "<leader>ov" , ":lua require'dap'.step_over()<CR>")
 vim.keymap.set("n", "<leader>in" , ":lua require'dap'.step_into()<CR>")
 vim.keymap.set("n", "<leader>ou" , ":lua require'dap'.step_out()<CR>")
 vim.keymap.set("n", "<leader>t" , ":lua require'dap'.repl.toggle()<CR>")
--- nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
-
--- Other
--- map("n", "<leader>ec", ":echo synIDattr(synIDtrans(synID(line(\".\"), col(\".\"), 1)), \"name\")<CR>") --print color name under cursor

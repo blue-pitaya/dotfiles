@@ -8,6 +8,11 @@ require('telescope').setup{
         width = { padding = 12 },
         prompt_position = "top",
       },
+      vertical = {
+        height = { padding = 1 },
+        width = { padding = 12 },
+        prompt_position = "top",
+      },
     },
     wrap_results = true,
     mappings = {

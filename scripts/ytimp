@@ -1,0 +1,3 @@
+#!/bin/sh
+
+yt-dlp -f bestvideo+bestaudio --embed-metadata --embed-subs --embed-thumbnail --download-archive "~/Videos/imp-videos/.yt-dlp-download-archive" -P "~/Videos/imp-videos/" $1

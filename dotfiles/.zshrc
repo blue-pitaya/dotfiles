@@ -3,15 +3,20 @@ export EDITOR='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
 
+#Zsh plugins
+# https://github.com/junegunn/fzf
+source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
+
 # My envs
 source ~/.myenvs
 
 # Useful envs
 export MYRC=~/.zshrc
 export MYNVIMRC=~/.config/nvim
+export SCRIPTS_PATH="/home/$USER/scripts"
 
 # Add my scrips dir
-export PATH="$PATH:/home/$USER/scripts"
+export PATH="$PATH:$SCRIPTS_PATH"
 # Add yarn bins (unsafe if yarn dont exists)
 export PATH="$PATH:$(yarn global bin)"
 #Add coursier
@@ -32,7 +37,6 @@ setopt EXTENDED_HISTORY
 
 # Basic auto/tab complete:
 autoload -U compinit
-zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
