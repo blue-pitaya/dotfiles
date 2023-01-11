@@ -5,7 +5,9 @@ kill_bloop() { ps -x | grep '[b]loop.Server' | awk '{$1=$1};1' | cut -d ' ' -f 1
 yay_listAurPackages() { yay -Qm }
 notes() { cd $NOTES_PATH && vim }
 rr() { ranger }
-pacman_update() { sudo pacman -Syu }
+pacup() { sudo pacman -Syu }
 food() { cd $NOTES_PATH && vim food.md }
 scripts() { cd $SCRIPTS_PATH && vim }
 vim_zshrc() { vim ~/.zshrc }
+vlc-random() { ls | sort -R| head -n 1| xargs --delimiter='\n' vlc }
+aliases() { vim $ALIASES_FILE }
