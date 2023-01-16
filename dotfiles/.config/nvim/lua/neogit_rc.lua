@@ -16,11 +16,11 @@ require("neogit").setup {
   auto_show_console = true,
   -- Change the default way of opening the commit popup
   commit_popup = {
-    kind = "split",
+    kind = "split_above",
   },
   -- Change the default way of opening popups
   popup = {
-    kind = "split",
+    kind = "split_above",
   },
   -- customize displayed signs
   signs = {
@@ -42,7 +42,8 @@ require("neogit").setup {
     --   }
     -- }
     --
-    diffview = true
+    -- there is a problem with keybinding when opening diffview from neogit
+    diffview = false
   },
   -- Setting any section to `false` will make the section not render at all
   sections = {
@@ -75,7 +76,7 @@ require("neogit").setup {
       -- Adds a mapping with "B" as key that does the "BranchPopup" command
       ["B"] = "BranchPopup",
       -- Removes the default mapping of "s"
-      ["s"] = "",
+      --["s"] = "",
     }
   }
 }
