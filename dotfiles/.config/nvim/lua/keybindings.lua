@@ -8,10 +8,13 @@ vim.keymap.set('n', '<C-i>', '<C-i>zz')
 --vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Paste text on visual without changing register content
 vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("n", "<Leader>q", ":tabclose<CR>")
+
+-- Git
+vim.keymap.set("n", "<Leader>gs", ":Neogit<CR>")
 
 -- Diffview
 vim.keymap.set("n", "<Leader>do", ":DiffviewOpen<CR>")
-vim.keymap.set("n", "<Leader>dc", ":DiffviewClose<CR>")
 vim.keymap.set("n", "<Leader>dh", ":DiffviewFileHistory %<CR>")
 
 -- LSP
@@ -37,11 +40,13 @@ vim.keymap.set("n", "<Space><Space>", ":Telescope find_files<cr>")
 vim.keymap.set("n", "<Space>g", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>")
 vim.keymap.set("n", "<Space>r", ":Telescope resume<cr>")
 vim.keymap.set("n", "<Space>j", ":Telescope buffers initial_mode=normal<cr>")
+vim.keymap.set("n", "<Space>b", ":Telescope buffers initial_mode=normal<cr>")
 vim.keymap.set("n", "<Space>k", ":Telescope keymaps<cr>")
 vim.keymap.set("n", "<Space>n", ":Telescope lsp_dynamic_workspace_symbols<cr>")
 vim.keymap.set("n", "<Leader><Leader>", ":Telescope diagnostics initial_mode=normal layout_strategy=vertical<cr>")
 vim.keymap.set("n", "<Space>h", ":Telescope help_tags<cr>")
 vim.keymap.set("n", "<Space>s", ":Telescope git_status initial_mode=normal<cr>")
+vim.keymap.set("n", "<Space>p", ":Telescope neoclip initial_mode=normal<cr>")
 
 -- Telesopce: live grep selected text
 function vim.getVisualSelection()

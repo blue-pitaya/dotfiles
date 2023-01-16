@@ -21,6 +21,7 @@ let c19='#0000af'
 let c22='#005f00'
 let c38='#00afd7'
 let c44='#00d7d7'
+let c51='#00ffff'
 let c52='#5f0000'
 let c58='#5f5f00'
 let c72='#5faf87'
@@ -114,6 +115,7 @@ let CustomColor['DiffText'] = {"guifg": cNone, "guibg": cDarkBlue}
 let CustomColor['DiffAdd'] = {"guifg": cNone, "guibg": cDarkGreen}
 let CustomColor['DiffDelete'] = {"guifg": cNone, "guibg": cDarkRed}
 let CustomColor['DiffviewDiffDelete'] = {"guifg": cDarkRed, "guibg": cDarkRed}
+let CustomColor['FoldColumn'] = {"guifg": c51, "guibg": cNone}
 " Parens
 let CustomColor['MatchParen'] = {"guifg": cNone, "guibg": c58}
 " Scala

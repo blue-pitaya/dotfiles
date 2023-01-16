@@ -11,3 +11,4 @@ scripts() { cd $SCRIPTS_PATH && vim }
 vim_zshrc() { vim ~/.zshrc }
 vlc-random() { ls | sort -R| head -n 1| xargs --delimiter='\n' vlc }
 aliases() { vim $ALIASES_FILE }
+lg() { lazygit }

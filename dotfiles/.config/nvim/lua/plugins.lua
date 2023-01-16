@@ -25,9 +25,13 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope-ui-select.nvim', -- Code actions
     commit = '62ea5e5'
   }
+  use {
+    "AckslD/nvim-neoclip.lua",
+    commit = 'e112a0b'
+  }
   -- Git plugin
-  use 'tpope/vim-fugitive'
   use 'sindrets/diffview.nvim'
+  use 'TimUntersberger/neogit'
   -- LSP & programming
   use 'neovim/nvim-lspconfig' -- Huge repo of lsp configs
   use 'scalameta/nvim-metals' -- Scala plugin (syntax, lsp, code actions and more)
@@ -47,7 +51,7 @@ return require('packer').startup(function(use)
   use  {
     'prettier/vim-prettier',
     run = 'yarn install --frozen-lockfile --production',
-    ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'}
+    ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'svelte', 'yaml', 'html'}
   }
   -- Autocompletion
   use 'hrsh7th/nvim-cmp'

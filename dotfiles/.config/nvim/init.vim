@@ -31,6 +31,7 @@ lua require('dap_rc')
 lua require('snippy_rc')
 lua require('leap_rc')
 lua require('misc')
+lua require('neogit_rc')
 
 " ======== Autocmds ========
 autocmd BufNewFile,BufRead *.conf set filetype=hocon
@@ -66,9 +67,6 @@ nnoremap <leader>v :vs<CR>
 nnoremap <leader>s :split<CR>
 nnoremap <C-space> <C-W>r
 nnoremap <C-W><C-W> <C-W>69+
-
-" Vim fugitive
-nmap <leader>gs :Git<CR>
 
 " Dev icons fix
 command! -nargs=1 -complete=help H h <args> | only
