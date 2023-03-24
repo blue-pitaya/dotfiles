@@ -30,8 +30,7 @@ lua require('diffview_rc')
 lua require('dap_rc')
 lua require('snippy_rc')
 lua require('leap_rc')
-lua require('misc')
-lua require('neogit_rc')
+lua require('treesitter_rc')
 
 " ======== Autocmds ========
 autocmd BufNewFile,BufRead *.conf set filetype=hocon

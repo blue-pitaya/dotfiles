@@ -31,7 +31,6 @@ return require('packer').startup(function(use)
   }
   -- Git plugin
   use 'sindrets/diffview.nvim'
-  use 'TimUntersberger/neogit'
   -- LSP & programming
   use 'neovim/nvim-lspconfig' -- Huge repo of lsp configs
   use 'scalameta/nvim-metals' -- Scala plugin (syntax, lsp, code actions and more)
@@ -75,4 +74,6 @@ return require('packer').startup(function(use)
     'ggandor/leap.nvim',
     requires = {"tpope/vim-repeat"}
   }
+  -- Treesitter
+  use 'nvim-treesitter/nvim-treesitter'
 end)

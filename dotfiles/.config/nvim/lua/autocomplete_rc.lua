@@ -17,6 +17,9 @@ cmp.setup({
       border = 'rounded',
       scrollbar = '',
     },
+    entries_win = {
+      wrap = true,
+    }
   },
   mapping = {
     ['<tab>'] = cmp.mapping.select_next_item(),

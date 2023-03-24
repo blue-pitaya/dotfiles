@@ -126,7 +126,13 @@ let CustomColor['NvimTreeGitDirty'] = {"guifg": c44, "guibg": cNone}
 let CustomColor['NvimTreeWindowPicker'] = {"guifg": c254, "guibg": c17, "gui": "bold"}
 " Leap.nvim
 let CustomColor['LeapLabelPrimary'] = {"guifg": cBlack, "guibg": cYellow, "gui": "bold"}
-
+" Markdown
+let CustomColor['markdownH1'] = {"guifg": c167}
+let CustomColor['markdownH2'] = {"guifg": c228}
+let CustomColor['markdownH3'] = {"guifg": c44}
+let CustomColor['markdownH4'] = {"guifg": c151}
+let CustomColor['markdownH5'] = {"guifg": c167}
+let CustomColor['markdownH6'] = {"guifg": c167}
 
 
 for key in keys(CustomColor)
@@ -202,61 +208,52 @@ hi! link CmpItemAbbr           Identifier
 hi! link CmpItemAbbrDeprecated Error
 
 " tree-sitter highlight groups
-hi! link TSString             String
-hi! link TSOperator           Operator
-hi! link TSFunction           Function
-hi! link TSFuncBuiltin        Function
-hi! link TSFuncMacro          Function
-hi! link TSError              Error
-hi! link TSPunctDelimiter     PunctDelimiter
-hi! link TSPunctBracket       PunctBracket
-hi! link TSPunctSpecial       PunctSpecial
-hi! link TSConstant           Constant
-hi! link TSConstBuiltin       Constant
-hi! link TSConstMacro         Type
-hi! link TSStringRegex        String
-hi! link TSStringEscape       Operator
-hi! link TSCharacter          String
-hi! link TSNumber             Number
-hi! link TSBoolean            Boolean
-hi! link TSFloat              Float
-hi! link TSAnnotation         Comment
-hi! link TSAttribute          Attribute
-hi! link TSNamespace          Namespace
-hi! link TSParameter          Identifier
-hi! link TSParameterReference Identifier
-hi! link TSMethod             Function
-hi! link TSField              Field
-hi! link TSProperty           Property
-hi! link TSConstructor        Constructor
-hi! link TSConditional        Conditional
-hi! link TSRepeat             Repeat
-hi! link TSLabel              Label
-hi! link TSKeyword            Keyword
-hi! link TSKeywordFunction    Keyword
-hi! link TSKeywordOperator    Keyword
-hi! link TSException          Exception
-hi! link TSType               Type
-hi! link TSTypeBuiltin        Type
-hi! link TSStructure          Type
-hi! link TSInclude            Include
-hi! link TSVariable           Identifier
-hi! link TSVariableBuiltin    Identifier
-hi! link TSText               Normal
-hi! link TSStrong             Strong
-hi! link TSEmphasis           Emphasis
-hi! link TSUnderline          Underline
-hi! link TSTitle              Title
-hi! link TSLiteral            Literal
-hi! link TSURI                Identifier
-hi! link TSTag                Tag
-hi! link TSTagDelimiter       TagDelimiter
-
-" My colors
-hi! link markdownH1 Keyword
-hi! link markdownH1 Keyword
-hi! link markdownH2 Keyword
-hi! link markdownH3 Keyword
-hi! link markdownH4 Keyword
-hi! link markdownH5 Keyword
-hi! link markdownH6 Keyword
+hi! link @string             String
+hi! link @operator           Operator
+hi! link @function           Function
+hi! link @funcBuiltin        Function
+hi! link @funcMacro          Function
+hi! link @error              Error
+hi! link @punctDelimiter     PunctDelimiter
+hi! link @punctBracket       PunctBracket
+hi! link @punctSpecial       PunctSpecial
+hi! link @constant           Constant
+hi! link @constBuiltin       Constant
+hi! link @constMacro         Type
+hi! link @stringRegex        String
+hi! link @stringEscape       Operator
+hi! link @character          String
+hi! link @number             Number
+hi! link @boolean            Boolean
+hi! link @float              Float
+hi! link @annotation         Comment
+hi! link @attribute          Attribute
+hi! link @namespace          Namespace
+hi! link @parameter          Normal
+hi! link @parameterReference Normal
+hi! link @method             Function
+hi! link @field              Field
+hi! link @property           Property
+hi! link @constructor        Constructor
+hi! link @conditional        Conditional
+hi! link @repeat             Repeat
+hi! link @label              Label
+hi! link @keyword            Keyword
+hi! link @keywordFunction    Keyword
+hi! link @keywordOperator    Keyword
+hi! link @exception          Exception
+hi! link @type               Type
+hi! link @typeBuiltin        Type
+hi! link @structure          Type
+hi! link @include            Include
+hi! link @variable           Normal
+hi! link @variableBuiltin    Normal
+hi! link @text               Normal
+hi! link @strong             Strong
+hi! link @emphasis           Emphasis
+hi! link @underline          Underline
+hi! link @title              Title
+hi! link @literal            Literal
+hi! link @uRI                Identifier
+hi! link @tag                Tag
+hi! link @tagDelimiter       TagDelimiter

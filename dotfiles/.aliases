@@ -1,5 +1,14 @@
 #!/bin/zsh
 
+# General
+alias ls='lsd --icon=never'
+alias ll='ls -la'
+alias lt='ls --tree'
+clip() { xclip -selection clipboard }
+sbt_newScalaProject() { sbt new scala/scala-seed.g8 }
+hig() { history 0 | rg }
+pacman_removeCache() { sudo rm -r /var/cache/pacman/pkg }
+
 vim_nvimConfig() { cd $MYNVIMRC && vim }
 kill_bloop() { ps -x | grep '[b]loop.Server' | awk '{$1=$1};1' | cut -d ' ' -f 1 | xargs kill }
 yay_listAurPackages() { yay -Qm }
@@ -12,3 +21,6 @@ vim_zshrc() { vim ~/.zshrc }
 vlc-random() { ls | sort -R| head -n 1| xargs --delimiter='\n' vlc }
 aliases() { vim $ALIASES_FILE }
 lg() { lazygit }
+gst() { git status }
+findf() { find . -name $1 }
+gic() { git commit }

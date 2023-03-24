@@ -50,19 +50,11 @@ else
     echo "aliases file not found"
 fi
 
-# Useful aliases
-alias clip='xclip -selection clipboard'
-alias ls='ls --color=auto'
-alias ll='ls -lah'
-alias sbt_newScalaProject='sbt new scala/scala-seed.g8'
-alias hig='history 0 | rg'
-alias pacman_removeCache="sudo rm -r /var/cache/pacman/pkg"
-
 # Fix java windows
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Keybindings
-open_in_same_dir () { st -d $(pwd) & disown; zle redisplay; }
+open_in_same_dir () { st -d $(pwd) > /dev/null 2>&1 & disown; zle redisplay; }
 zle -N open_in_same_dir                  
 bindkey '^P' open_in_same_dir                  
 

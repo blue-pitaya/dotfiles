@@ -18,12 +18,12 @@ vim.keymap.set("n", "<Leader>do", ":DiffviewOpen<CR>")
 vim.keymap.set("n", "<Leader>dh", ":DiffviewFileHistory %<CR>")
 
 -- LSP
-vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-vim.keymap.set("n", "J", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
-vim.keymap.set("n", "L", "<cmd>lua vim.lsp.codelens.run()<CR>")
-vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-vim.keymap.set("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references({show_line=false})<CR>")
+vim.keymap.set("n", "gd", function() require'telescope.builtin'.lsp_definitions({show_line=false, initial_mode='normal'}) end)
+vim.keymap.set("n", "J",  function() vim.lsp.buf.code_action() end)
+vim.keymap.set("n", "K",  function() vim.lsp.buf.hover() end)
+vim.keymap.set("n", "L",  function() vim.lsp.codelens.run() end)
+vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end)
+vim.keymap.set("n", "gr", function() require'telescope.builtin'.lsp_references({show_line=false, initial_mode='normal'}) end)
 
 vim.keymap.set("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
 vim.keymap.set("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>")
