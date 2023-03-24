@@ -7,6 +7,7 @@ set encoding=utf-8
 set updatetime=750
 set nomodeline
 set termguicolors
+set signcolumn=no
 
 " Change tab to spaces
 set expandtab
