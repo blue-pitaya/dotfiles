@@ -33,6 +33,7 @@ lua require('snippy_rc')
 lua require('leap_rc')
 lua require('treesitter_rc')
 lua require('neotree_rc')
+lua require('window-picker_rc')
 
 " ======== Autocmds ========
 autocmd BufNewFile,BufRead *.conf set filetype=hocon

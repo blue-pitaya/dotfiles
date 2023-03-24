@@ -301,7 +301,7 @@ local config = {
     position = "left", -- left, right, top, bottom, float, current
     width = 40, -- applies to left and right positions
     height = 15, -- applies to top and bottom positions
-    auto_expand_width = false, -- expand the window when file exceeds the window width. does not work with position = "float"
+    auto_expand_width = true, -- expand the window when file exceeds the window width. does not work with position = "float"
     popup = { -- settings that apply to float position only
       size = {
         height = "80%",
@@ -328,19 +328,20 @@ local config = {
       },
       ["<2-LeftMouse>"] = "open",
       ["<cr>"] = "open",
+      ["o"] = "open_with_window_picker",
       ["<esc>"] = "revert_preview",
       ["P"] = { "toggle_preview", config = { use_float = true } },
-      ["l"] = "focus_preview",
-      ["S"] = "open_split",
+      -- ["l"] = "focus_preview",
+      -- ["S"] = "open_split",
       -- ["S"] = "split_with_window_picker",
-      ["s"] = "open_vsplit",
+      -- ["s"] = "open_vsplit",
       -- ["s"] = "vsplit_with_window_picker",
-      ["t"] = "open_tabnew",
+      -- ["t"] = "open_tabnew",
       -- ["<cr>"] = "open_drop",
       -- ["t"] = "open_tab_drop",
-      ["w"] = "open_with_window_picker",
-      ["C"] = "close_node",
-      ["z"] = "close_all_nodes",
+      -- ["w"] = "open_with_window_picker",
+      -- ["C"] = "close_node",
+      -- ["z"] = "close_all_nodes",
       --["Z"] = "expand_all_nodes",
       ["R"] = "refresh",
       ["a"] = {
@@ -350,7 +351,7 @@ local config = {
           show_path = "none", -- "none", "relative", "absolute"
         }
       },
-      ["A"] = "add_directory", -- also accepts the config.show_path and config.insert_as options.
+      -- ["A"] = "add_directory", -- also accepts the config.show_path and config.insert_as options.
       ["d"] = "delete",
       ["r"] = "rename",
       ["y"] = "copy_to_clipboard",
@@ -385,7 +386,7 @@ local config = {
     async_directory_scan = "auto", -- "auto"   means refreshes are async, but it's synchronous when called from the Neotree commands.
                                    -- "always" means directory scans are always async.
                                    -- "never"  means directory scans are never async.
-    scan_mode = "shallow", -- "shallow": Don't scan into directories to detect possible empty directory a priori
+    scan_mode = "deep", -- "shallow": Don't scan into directories to detect possible empty directory a priori
                            -- "deep": Scan into directories to detect empty or grouped empty directories a priori.
     bind_to_cwd = true, -- true creates a 2-way binding between vim's cwd and neo-tree's root
     cwd_target = {
@@ -458,7 +459,7 @@ local config = {
     --  end
     --  return args
     --end,
-    group_empty_dirs = false, -- when true, empty folders will be grouped together
+    group_empty_dirs = true, -- when true, empty folders will be grouped together
     search_limit = 50, -- max number of search results when using filters
     follow_current_file = false, -- This will find and focus the file in the active buffer every time
                                  -- the current file is changed while the tree is open.
@@ -516,5 +517,3 @@ local config = {
 }
 
 require("neo-tree").setup(config)
-
-vim.cmd([[nnoremap \ :Neotree reveal<cr>]])

@@ -8,6 +8,10 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   -- File browser
   use {
+    's1n7ax/nvim-window-picker',
+    tag = 'v1.5'
+  }
+  use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
     requires = {
