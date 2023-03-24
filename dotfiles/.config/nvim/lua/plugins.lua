@@ -1,17 +1,21 @@
 vim.cmd [[packadd packer.nvim]]
+vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 return require('packer').startup(function(use)
   -- Packer itself :)
   use 'wbthomason/packer.nvim'
-  -- File browser
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    }
-  }
   -- Required for telescope and other plugins
   use 'nvim-lua/plenary.nvim'
+  -- File browser
+  use {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  }
   -- Status bar
   use 'nvim-lualine/lualine.nvim'
   -- Telescope (fuzzy finder)
@@ -76,4 +80,8 @@ return require('packer').startup(function(use)
   }
   -- Treesitter
   use 'nvim-treesitter/nvim-treesitter'
+  use {
+    'stevearc/aerial.nvim',
+    commit = "e2b6cd0"
+  }
 end)

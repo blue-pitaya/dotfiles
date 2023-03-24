@@ -1,5 +1,6 @@
 -- Automatic formatting
 vim.cmd([[au BufWritePre *.scala lua vim.lsp.buf.format()]])
+vim.cmd([[au BufWritePre *.sbt lua vim.lsp.buf.format()]])
 
 -- Scala
 ---@diagnostic disable-next-line: lowercase-global
@@ -78,7 +79,7 @@ require'lspconfig'.dockerls.setup{}
 
 -- Lua
 -- require lua-language-server, on arch: sudo pacman -S lua-language-server
-require'lspconfig'.sumneko_lua.setup {
+require'lspconfig'.lua_ls.setup {
   settings = {
     Lua = {
       runtime = {

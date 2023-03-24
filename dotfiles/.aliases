@@ -4,9 +4,11 @@
 alias ls='lsd --icon=never'
 alias ll='ls -la'
 alias lt='ls --tree'
+alias hig='history 0 | rg'
+alias chx='chmod +x'
+'='() { python -c "print($1)" }
 clip() { xclip -selection clipboard }
 sbt_newScalaProject() { sbt new scala/scala-seed.g8 }
-hig() { history 0 | rg }
 pacman_removeCache() { sudo rm -r /var/cache/pacman/pkg }
 
 vim_nvimConfig() { cd $MYNVIMRC && vim }
@@ -24,3 +26,4 @@ lg() { lazygit }
 gst() { git status }
 findf() { find . -name $1 }
 gic() { git commit }
+st_run() { st -e zsh -c "$1;exec zsh" &! }

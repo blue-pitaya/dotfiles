@@ -12,6 +12,8 @@ set termguicolors
 set expandtab
 set shiftwidth=2
 set tabstop=2
+set list
+set listchars=tab:⦁.
 
 " Case insensitive search unless capital char exists
 set ignorecase
@@ -21,7 +23,6 @@ set smartcase
 lua require('plugins')
 
 lua require('lsp_rc')
-lua require('nvimtree_rc')
 lua require('telescope_rc')
 lua require('autocomplete_rc')
 lua require('statusbar_rc')
@@ -31,6 +32,7 @@ lua require('dap_rc')
 lua require('snippy_rc')
 lua require('leap_rc')
 lua require('treesitter_rc')
+lua require('neotree_rc')
 
 " ======== Autocmds ========
 autocmd BufNewFile,BufRead *.conf set filetype=hocon

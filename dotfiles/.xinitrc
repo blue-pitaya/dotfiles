@@ -1,4 +1,4 @@
-feh --no-fehbg --bg-fill '/home/kodus/wallpapers/simple.png'
+feh --no-fehbg --bg-fill --randomize /home/kodus/wallpapers/elecronic-gems
 # gifview --animate --new-window root Pictures/wallbig.gif
 # xwinwrap -fs -fdt -ni -b -nf -un -o 1.0 -debug -- gifview -w WID ~/Pictures/wallbig.gif -a
 

@@ -9,6 +9,7 @@ vim.keymap.set('n', '<C-i>', '<C-i>zz')
 -- Paste text on visual without changing register content
 vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<Leader>q", ":tabclose<CR>")
+vim.keymap.set("n", "<C-P>", ":tabnext<CR>")
 
 -- Git
 vim.keymap.set("n", "<Leader>gs", ":Neogit<CR>")
@@ -33,7 +34,10 @@ vim.keymap.set("i", "<C-K>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 vim.keymap.set("n", "<leader>m", ":MetalsOrganizeImports<CR>")
 
 -- File explorer
-vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<C-N>", ":Neotree toggle<CR>")
+
+-- Symbols explorer
+vim.keymap.set("n", "<C-b>", ":AerialToggle<CR>")
 
 -- Telescope
 vim.keymap.set("n", "<Space><Space>", ":Telescope find_files<cr>")

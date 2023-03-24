@@ -78,3 +78,5 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Disable r as !!
 disable r
+
+eval "$RUN_CMD"
