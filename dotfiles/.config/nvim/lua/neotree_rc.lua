@@ -88,7 +88,7 @@ local config = {
     highlight_separator_active = "NeoTreeTabSeparatorActive",
   },
   --
-  --event_handlers = {
+  event_handlers = {
   --  {
   --    event = "before_render",
   --    handler = function (state)
@@ -141,12 +141,12 @@ local config = {
   --     print("neo_tree_window_before_open", vim.inspect(args))
   --   end
   -- },
-  -- {
-  --   event = "neo_tree_window_after_open",
-  --   handler = function(args)
-  --     vim.cmd("wincmd =")
-  --   end
-  -- },
+  {
+    event = "neo_tree_window_after_open",
+    handler = function(args)
+      vim.cmd("wincmd =")
+    end
+  },
   -- {
   --   event = "neo_tree_window_before_close",
   --   handler = function(args)
@@ -159,7 +159,7 @@ local config = {
   --     vim.cmd("wincmd =")
   --   end
   -- }
-  --},
+  },
   default_component_configs = {
     container = {
       enable_character_fade = true,
@@ -288,7 +288,7 @@ local config = {
   window = { -- see https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/popup for
              -- possible options. These can also be functions that return these options.
     position = "left", -- left, right, top, bottom, float, current
-    width = 40, -- applies to left and right positions
+    width = 30, -- applies to left and right positions
     height = 15, -- applies to top and bottom positions
     auto_expand_width = true, -- expand the window when file exceeds the window width. does not work with position = "float"
     popup = { -- settings that apply to float position only

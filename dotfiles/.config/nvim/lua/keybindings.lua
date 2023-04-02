@@ -34,7 +34,7 @@ vim.keymap.set("i", "<C-K>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 vim.keymap.set("n", "<leader>m", ":MetalsOrganizeImports<CR>")
 
 -- File explorer
-vim.keymap.set("n", "<C-N>", ":Neotree toggle<CR>")
+vim.keymap.set("n", "<C-N>", function () vim.cmd("Neotree toggle") end)
 
 -- Symbols explorer
 vim.keymap.set("n", "<C-b>", ":AerialToggle<CR>")
