@@ -172,6 +172,13 @@ for key in keys(CustomColor)
     endif
 endfor
 
+hi! DiagnosticUnderlineError guisp=#5f0000
+hi! DiagnosticUnderlineWarn guisp=#5f5f00
+
+" Magic telescope border ;)
+au InsertEnter * hi! TelescopePromptBorder guifg=#00ffd7
+au InsertLeave * hi! link TelescopePromptBorder TelescopeBorder
+
 hi! link NvimTreeGitNew NvimTreeGitDirty
 hi! link NvimTreeGitStaged NvimTreeGitDirty
 
@@ -256,4 +263,4 @@ hi! link @title              Title
 hi! link @literal            Literal
 hi! link @uRI                Identifier
 hi! link @tag                Tag
-hi! link @tagDelimiter       TagDelimiter
+hi! link @tagDelimiter       TagDeliWarn
