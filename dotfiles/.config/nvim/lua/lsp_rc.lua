@@ -6,9 +6,10 @@ vim.cmd([[au BufWritePre *.sbt lua vim.lsp.buf.format()]])
 ---@diagnostic disable-next-line: lowercase-global
 metals_config = require("metals").bare_config()
 metals_config.settings = {
-  serverVersion = '0.11.2', -- newer versions dont work
+  serverVersion = '0.11.11',
   showImplicitArguments = true,
   excludedPackages = { "akka.actor.typed.javadsl", "akka.stream.javadsl", "akka.http.javadsl" },
+  bloopSbtAlreadyInstalled = true,
 }
 
 metals_config.on_attach = function()
