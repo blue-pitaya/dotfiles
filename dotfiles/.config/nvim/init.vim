@@ -21,6 +21,7 @@ set ignorecase
 set smartcase
 
 " ======== Lua-based config ========
+lua require('colors')
 lua require('plugins')
 
 lua require('lsp_rc')
@@ -38,11 +39,6 @@ lua require('window-picker_rc')
 
 " ======== Autocmds ========
 autocmd BufNewFile,BufRead *.conf set filetype=hocon
-
-" ======== Colors ========
-" This must be after loading all rc.lua files! Leap.nvim must load color
-" definitions first.
-colorscheme cplex
 
 " ======== Key maps ========
 noremap <C-S> :update<CR>

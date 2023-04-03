@@ -118,3 +118,7 @@ require('neoclip').setup({
   },
 })
 require("telescope").load_extension("neoclip")
+
+-- Magic telescope border ;)
+vim.cmd([[au InsertEnter * hi! TelescopePromptBorder guifg=#00ffd7]])
+vim.cmd([[au InsertLeave * hi! link TelescopePromptBorder TelescopeBorder]])
