@@ -84,8 +84,4 @@ return require('packer').startup(function(use)
   }
   -- Treesitter
   use 'nvim-treesitter/nvim-treesitter'
-  use {
-    'stevearc/aerial.nvim',
-    commit = "e2b6cd0"
-  }
 end)

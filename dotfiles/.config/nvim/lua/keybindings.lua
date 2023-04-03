@@ -2,17 +2,32 @@
 -- https://github.com/neovim/neovim/pull/16591
 
 -- General
+vim.keymap.set("n", "<C-S>", ":update<CR>")
+vim.keymap.set("i", "<C-S>", "<ESC>:update<CR>")
+vim.keymap.set("n", "<Space>", "<nop>")
+vim.keymap.set("v", "Y", '"+y') --copy to system-wide register
+vim.keymap.set("n", "<Leader>nh", ":nohlsearch<CR>")
+vim.keymap.set("n", "<C-r>", '"hy:%s/<C-r>h//gc<left><left><left>')
+vim.keymap.set("n", "vil", "^vg_")
 vim.keymap.set('n', '<C-o>', '<C-o>zz')
 vim.keymap.set('n', '<C-i>', '<C-i>zz')
---vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
---vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
--- Paste text on visual without changing register content
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>p", "\"_dP") -- Paste text on visual without changing register content
 vim.keymap.set("n", "<Leader>q", ":tabclose<CR>")
 vim.keymap.set("n", "<C-P>", ":tabnext<CR>")
 
--- Git
-vim.keymap.set("n", "<Leader>gs", ":Neogit<CR>")
+vim.cmd([[autocmd FileType qf nnoremap <buffer> o :.cc<CR>]]) -- open file in qf window
+
+-- Window bindings
+vim.keymap.set("n", "<C-Q>", "<C-W>q")
+vim.keymap.set("n", "<C-J>", "<C-W>j")
+vim.keymap.set("n", "<C-K>", "<C-W>k")
+vim.keymap.set("n", "<C-H>", "<C-W>h")
+vim.keymap.set("n", "<C-L>", "<C-W>l")
+vim.keymap.set("n", "+", "<C-W>+")
+vim.keymap.set("n", "-", "<C-W>-")
+vim.keymap.set("n", "<leader>v", ":vs<CR>")
+vim.keymap.set("n", "<leader>s", ":split<CR>")
+vim.keymap.set("n", "<C-space>", "<C-W>r")
 
 -- Diffview
 vim.keymap.set("n", "<Leader>do", ":DiffviewOpen<CR>")
@@ -35,9 +50,6 @@ vim.keymap.set("n", "<leader>m", ":MetalsOrganizeImports<CR>")
 
 -- File explorer
 vim.keymap.set("n", "<C-N>", function () vim.cmd("Neotree toggle") end)
-
--- Symbols explorer
-vim.keymap.set("n", "<C-b>", ":AerialToggle<CR>")
 
 -- Telescope
 vim.keymap.set("n", "<Space><Space>", ":Telescope find_files<cr>")
