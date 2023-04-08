@@ -5,12 +5,12 @@ require('telescope').setup{
     layout_config = {
       horizontal = {
         height = { padding = 1 },
-        width = { padding = 12 },
+        width = { padding = 18 },
         prompt_position = "top",
       },
       vertical = {
         height = { padding = 1 },
-        width = { padding = 12 },
+        width = { padding = 18 },
         prompt_position = "top",
       },
     },

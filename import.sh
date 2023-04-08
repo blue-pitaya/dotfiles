@@ -46,3 +46,7 @@ cp -v ~/.config/gtk-3.0/settings.ini $CONFIGDIR/gtk-3.0
 #htop
 mkdir -p $CONFIGDIR/htop/
 cp -v ~/.config/htop/htoprc $CONFIGDIR/htop
+
+#sbt
+mkdir -p ${DOTFILES}/.sbt/1.0/
+cp -v ~/.sbt/1.0/global.sbt ${DOTFILES}/.sbt/1.0/

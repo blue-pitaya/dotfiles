@@ -1,12 +1,12 @@
 snippet jsexporttoplevel
-	@JSExportTopLevel("${1:name}")
+  @JSExportTopLevel("${1:name}")
   def ${1:name}(${2:}): Unit = {
     Main.mainReducer.execute(${0:})
   }
 snippet for
-	for {
-	  ${0:}
-	} yield ()
+  for {
+    ${0:}
+  } yield ()
 snippet scalatestclass
   import org.scalatest.flatspec.AnyFlatSpec
   import org.scalatest.matchers.should.Matchers
@@ -23,6 +23,8 @@ snippet laminar_imports
   import com.raquo.laminar.api.L._
   import org.scalajs.dom
 snippet duration_import
-	import scala.concurrent.duration._
+  import scala.concurrent.duration._
 snippet implicit_ec
-	(implicit ec: ExecutionContext)
+  (implicit ec: ExecutionContext)
+snippet cats_unsafe_implicit
+  import cats.effect.unsafe.implicits.global

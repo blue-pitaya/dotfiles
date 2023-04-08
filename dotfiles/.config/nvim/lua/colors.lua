@@ -23,6 +23,7 @@ local c160='#d70000'
 local c167='#d75f5f'
 local c168='#d75f87'
 local c173='#d7875f'
+local c184='#d7d700'
 local c186='#d7d787'
 local c187='#d7d7af'
 local c228="#ffff87"
@@ -133,7 +134,7 @@ seth('markdownH6', {fg = c167})
 
 -- Diagnostics
 seth('DiagnosticUnderlineError', {sp = c124, underline = true})
-seth('DiagnosticUnderlineWarn', {sp = c58, underline = true})
+seth('DiagnosticUnderlineWarn', {sp = c184, underline = true})
 
 -- Misc
 seth("NvimTreeGitNew", {link = "NvimTreeGitDirty"})

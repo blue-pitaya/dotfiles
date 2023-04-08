@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   -- Telescope (fuzzy finder)
   -- Needs: fd and rg (ripgrep) packages installed to work properly
-  use 'blue-pitaya/telescope.nvim'
+  use '~/projects/telescope.nvim'
   use {
     'nvim-telescope/telescope-live-grep-args.nvim',
     commit = '7de3bae'
