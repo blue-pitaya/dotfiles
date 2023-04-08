@@ -21,6 +21,8 @@ export PATH="$PATH:$SCRIPTS_PATH"
 export PATH="$PATH:$(yarn global bin)"
 #Add coursier
 export PATH="$PATH:/home/$USER/.local/share/coursier/bin" # For some reason it will automaticly get added to PATH
+#Add cargo
+export PATH="$PATH:/home/$USER/.cargo/bin"
 
 # Enable colors and change prompt
 autoload -U colors && colors

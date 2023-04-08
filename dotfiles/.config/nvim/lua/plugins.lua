@@ -30,10 +30,6 @@ return require('packer').startup(function(use)
     commit = '7de3bae'
   }
   use {
-    'nvim-telescope/telescope-ui-select.nvim', -- Code actions
-    commit = '62ea5e5'
-  }
-  use {
     "AckslD/nvim-neoclip.lua",
     commit = 'e112a0b'
   }
@@ -54,6 +50,8 @@ return require('packer').startup(function(use)
     'chr4/nginx.vim', -- Nginx syntax highlight
     commit = '9969445'
   }
+  -- LSP extensions (requires plenary)
+  --use 'jose-elias-alvarez/null-ls.nvim'
   -- Prettier
   use  {
     'prettier/vim-prettier',
