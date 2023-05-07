@@ -117,7 +117,7 @@ seth('FoldColumn', {fg = c51, bg = cNone})
 seth('MatchParen', {fg = cNone, bg = c58})
 
 -- Scala
-seth('scalaKeywordModifier', {fg = c140, bg = cNone})
+seth('scalaKeywordModifier', {link = "Keyword"})
 
 -- NvimTree
 seth('NvimTreeFolderIcon', {fg = c186, bg = cNone})

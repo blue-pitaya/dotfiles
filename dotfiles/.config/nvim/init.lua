@@ -5,6 +5,7 @@ vim.opt.number = true
 vim.opt.encoding = "utf-8"
 vim.opt.modeline = false
 vim.opt.signcolumn = "no"
+vim.opt.wrap = true
 
 -- Change tab to spaces
 vim.opt.expandtab = true

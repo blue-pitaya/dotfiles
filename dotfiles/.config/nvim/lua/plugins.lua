@@ -11,6 +11,8 @@ return require('packer').startup(function(use)
     's1n7ax/nvim-window-picker',
     tag = 'v1.5'
   }
+  -- Nui - required for better select
+  use "MunifTanjim/nui.nvim"
   use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
@@ -82,4 +84,7 @@ return require('packer').startup(function(use)
   }
   -- Treesitter
   use 'nvim-treesitter/nvim-treesitter'
+  -- Find and replace
+  use 'nvim-pack/nvim-spectre'
 end)
+
