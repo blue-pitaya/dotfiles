@@ -17,8 +17,10 @@ cp -v ~/.zprofile $DOTFILES
 cp -v ~/.inputrc $DOTFILES
 cp -v ~/.xbindkeysrc $DOTFILES
 cp -v ~/.xinitrc $DOTFILES
-
 cp -v ~/.aliases $DOTFILES
+
+#alacritty
+cp -v ~/.alacritty.yml ${DOTFILES}
 
 # ranger
 mkdir -p ${CONFIGDIR}/ranger/

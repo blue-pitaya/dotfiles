@@ -232,3 +232,8 @@ local function override_ui_select()
 end
 
 override_ui_select()
+
+require'lspconfig'.bashls.setup{}
+
+-- required: yarn global add yaml-language-server
+-- require('lspconfig').yamlls.setup{}
