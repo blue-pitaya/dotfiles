@@ -52,3 +52,7 @@ cp -v ~/.config/htop/htoprc $CONFIGDIR/htop
 #sbt
 mkdir -p ${DOTFILES}/.sbt/1.0/
 cp -v ~/.sbt/1.0/global.sbt ${DOTFILES}/.sbt/1.0/
+
+# awsomeVM
+mkdir -p $CONFIGDIR/awesome/
+cp -rv ~/.config/awesome/ $CONFIGDIR/awesome/
