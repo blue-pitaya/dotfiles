@@ -15,15 +15,11 @@ vim_nvimConfig() { cd $MYNVIMRC && vim }
 kill_bloop() { ps -x | grep '[b]loop.Server' | awk '{$1=$1};1' | cut -d ' ' -f 1 | xargs kill }
 kill_sbt(){ ps -x | grep '[s]bt' | awk '{$1=$1};1' | cut -d ' ' -f 1 | xargs kill }
 yay_listAurPackages() { yay -Qm }
-notes() { cd $NOTES_PATH && vim }
 rr() { ranger }
 scripts() { cd $SCRIPTS_PATH && vim }
 vim_zshrc() { vim ~/.zshrc }
-vlc-random() { ls | sort -R| head -n 1| xargs --delimiter='\n' vlc }
 aliases() { vim $ALIASES_FILE }
 lg() { lazygit }
 gst() { git status }
 findf() { find . -name $1 }
 gic() { git commit }
-# TODO: remove st_run later
-st_run() { st -e zsh -c "$1;exec zsh" &! }

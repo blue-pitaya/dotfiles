@@ -23,6 +23,12 @@ export PATH="$PATH:$(yarn global bin)"
 export PATH="$PATH:/home/$USER/.local/share/coursier/bin" # For some reason it will automaticly get added to PATH
 #Add cargo
 export PATH="$PATH:/home/$USER/.cargo/bin"
+#Add pip
+export PATH="$PATH:/home/$USER/.local/bin"
+#Add composer bins
+export PATH="$PATH:/home/$USER/.config/composer/vendor/bin"
+#Add adm binary
+export PATH="$PATH:/home/$USER/adm/bin_path"
 
 # Enable colors and change prompt
 autoload -U colors && colors
@@ -32,7 +38,7 @@ PS1="%B%{$fg[red]%}[%{$fg[green]%}%n%{$fg[green]%}:%{$fg[green]%}%M %{$fg[blue]%
 mkdir -p ~/.cache/zsh
 touch -a ~/.cache/zsh/history
 export HISTFILE=~/.cache/zsh/history
-export HISTSIZE=32000
+export HISTSIZE=64000
 export SAVEHIST=$HISTSIZE
 setopt SHARE_HISTORY
 setopt EXTENDED_HISTORY

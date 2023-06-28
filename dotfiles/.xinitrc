@@ -10,7 +10,7 @@ xset m 0 0
 # Repeat keys faster
 xset r rate 250 50
 
-dwmblocks &
+# dwmblocks &
 xbindkeys --poll-rc
 
 # Remap caps lock to escape (who really needs caps lock?)
@@ -22,4 +22,4 @@ numlockx &
 # Start pulseaudio
 pulseaudio --start --log-target=syslog
 
-exec dwm
+exec awesome

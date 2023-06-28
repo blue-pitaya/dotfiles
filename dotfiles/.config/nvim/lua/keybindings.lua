@@ -45,6 +45,7 @@ vim.keymap.set("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
 vim.keymap.set("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>")
 vim.keymap.set("n", "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 vim.keymap.set("i", "<C-K>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+vim.keymap.set("i", "<C-J>", function() vim.lsp.buf.code_action() end)
 
 vim.keymap.set("n", "<leader>m", ":MetalsOrganizeImports<CR>")
 

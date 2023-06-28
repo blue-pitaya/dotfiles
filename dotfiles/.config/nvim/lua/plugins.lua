@@ -2,6 +2,8 @@ vim.cmd [[packadd packer.nvim]]
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 return require('packer').startup(function(use)
+  -- Plugin dev:
+  use '~/projects/nvim-scala-tools/nvim-plugin/'
   -- Packer itself :)
   use 'wbthomason/packer.nvim'
   -- Required for telescope and other plugins
