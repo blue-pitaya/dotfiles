@@ -18,7 +18,7 @@ local c132='#af5f87'
 local c140='#af87d7'
 local c151='#afd7af'
 local c160='#d70000'
-local c167='#f27775' --changed
+local c167='#d75f5f'
 local c168='#d75f87'
 local c173='#c89f8a' --changed
 local c184='#d7d700'
@@ -183,7 +183,7 @@ h('scalaCapitalWord', { link = "Normal" })
 h('scalaCaseFollowing', { link = "Normal" })
 h('scalaAkkaSpecialWord', { link = "Normal" })
 h('scalatestSpecialWord', { link = "Normal" })
-h('scalaSpecial', { link = "Operator" })
+h('scalaSpecial', { link = "Normal" })
 h('scalaInstanceDeclaration', { fg = p.iris })
 
 -- NvimTree

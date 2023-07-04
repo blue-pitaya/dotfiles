@@ -149,7 +149,7 @@ local taglist_buttons = gears.table.join(
 local tasklist_buttons = gears.table.join(
                      awful.button({ }, 1, function (c)
                                               if c == client.focus then
-                                                  c.minimized = true
+                                                  --c.minimized = true
                                               else
                                                   c:emit_signal(
                                                       "request::activate",
@@ -179,6 +179,13 @@ local function set_wallpaper(s)
         gears.wallpaper.maximized(wallpaper, s, true)
     end
 end
+
+--allow for padding on tag
+awful.tag.attached_connect_signal(nil, "property::selected", function(t)
+  local s = t.screen or awful.screen.focused()
+  local padding = t.padding or { left = 0, right = 0, top = 0, bottom = 0 }
+  s.padding = padding
+end)
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
@@ -214,7 +221,31 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist = awful.widget.tasklist {
         screen  = s,
         filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
+        buttons = tasklist_buttons,
+        widget_template = {
+          {
+            {
+              {
+                {
+                  id     = "icon_role",
+                  widget = wibox.widget.imagebox,
+                },
+                margins = 3,
+                widget  = wibox.container.margin,
+              },
+              {
+                id     = "text_role",
+                widget = wibox.widget.textbox,
+              },
+              layout = wibox.layout.fixed.horizontal,
+            },
+            left  = 4,
+            right = 4,
+            widget = wibox.container.margin
+          },
+          id     = "background_role",
+          widget = wibox.container.background,
+        },
     }
 
     -- Create the wibox
@@ -234,7 +265,8 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             --mykeyboardlayout,
             wibox.widget.systray(),
-            wibox.widget.textbox(separator_str),
+            awful.widget.watch('a timer tick', 1),
+            wibox.widget.textbox(' '),
             awful.widget.watch('sb-nettraf', 1),
             wibox.widget.textbox(separator_str),
             awful.widget.watch('headset-battery', 5),
@@ -286,12 +318,15 @@ globalkeys = gears.table.join(
               {description = "show main menu", group = "awesome"}),
 
     awful.key({}, 'XF86AudioRaiseVolume', function ()
-      os.execute('amixer set Master 5%+ ;')
+      os.execute('amixer set Master 5%+')
       sound_volumne_widget_timer:emit_signal('timeout')
     end),
     awful.key({}, 'XF86AudioLowerVolume', function ()
-      os.execute('amixer set Master 5%- ;')
+      os.execute('amixer set Master 5%-')
       sound_volumne_widget_timer:emit_signal('timeout')
+    end),
+    awful.key({"Shift"}, 'Print', function ()
+      os.execute('maim -s -q --hidecursor | xclip -selection clipboard -t image/png')
     end),
 
     -- Layout manipulation
@@ -385,33 +420,31 @@ clientkeys = gears.table.join(
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
-    awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
-              {description = "toggle keep on top", group = "client"}),
-    awful.key({ modkey,           }, "n",
-        function (c)
-            -- The client currently has the input focus, so it cannot be
-            -- minimized, since minimized clients can't have the focus.
-            c.minimized = true
+    awful.key({modkey}, "m",
+        function (_)
+          if (awful.layout.get(awful.screen.focused()) == awful.layout.suit.max) then
+            awful.layout.set(awful.layout.suit.tile)
+          else
+            awful.layout.set(awful.layout.suit.max)
+          end
         end ,
-        {description = "minimize", group = "client"}),
-    awful.key({ modkey,           }, "m",
-        function (c)
-            c.maximized = not c.maximized
-            c:raise()
+        {description = "set max layout", group = "client"}),
+    awful.key({modkey}, "t",
+        function (_)
+          local scr = awful.screen.focused()
+          local tag = scr.selected_tag
+          if tag then
+            if not tag.padding or tag.padding.left == 0 then
+              tag.padding = { left = 180, right = 180 }
+            else
+              tag.padding = { left = 0, right = 0 }
+            end
+            -- dirty hack to refresh screen with added padding
+            tag.selected = false
+            tag.selected = true
+          end
         end ,
-        {description = "(un)maximize", group = "client"}),
-    awful.key({ modkey, "Control" }, "m",
-        function (c)
-            c.maximized_vertical = not c.maximized_vertical
-            c:raise()
-        end ,
-        {description = "(un)maximize vertically", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "m",
-        function (c)
-            c.maximized_horizontal = not c.maximized_horizontal
-            c:raise()
-        end ,
-        {description = "(un)maximize horizontally", group = "client"})
+        {description = "set max layout", group = "client"})
 )
 
 -- Bind all key numbers to tags.
@@ -494,7 +527,8 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
-                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
+                     placement = awful.placement.no_overlap+awful.placement.no_offscreen,
+                     size_hints_honor = false,
      }
     },
 
