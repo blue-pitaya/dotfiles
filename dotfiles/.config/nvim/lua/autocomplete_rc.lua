@@ -1,8 +1,7 @@
 local cmp = require("cmp")
 
-vim.g.cmp_toggle_flag = true -- autocompletion on by default
-
 cmp.setup({
+  enabled = vim.g.cmp_is_enabled,
   snippet = {
     expand = function(args)
       require('snippy').expand_snippet(args.body)
@@ -37,3 +36,9 @@ cmp.setup({
     ghost_text = true
   }
 })
+
+-- Toggle autocompletion
+vim.api.nvim_create_user_command('ToggleCompletion', function()
+  vim.g.cmp_is_enabled = not vim.g.cmp_is_enabled
+  cmp.setup({enabled = vim.g.cmp_is_enabled})
+end, {})

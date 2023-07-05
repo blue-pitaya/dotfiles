@@ -19,14 +19,21 @@ end
 
 vim.cmd([[autocmd FileType scala,sbt lua require("metals").initialize_or_attach(metals_config)]])
 
--- Disable inline diagnostics
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+local function configDiagnostics()
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false,
-        update_in_insert = false,
-        underline = true,
+      virtual_text = vim.g.diagnostics_virtual_text_enabled,
+      update_in_insert = false,
+      underline = true,
     }
-)
+  )
+end
+
+-- Toggle virtual text
+vim.api.nvim_create_user_command('ToggleVirtError', function()
+  vim.g.diagnostics_virtual_text_enabled = not vim.g.diagnostics_virtual_text_enabled
+  configDiagnostics()
+end, {})
 
 -- NOTE (for neotree): this is changed from v1.x, which used the old style of highlight groups
 -- in the form "LspDiagnosticsSignWarning"
@@ -93,6 +100,7 @@ require'lspconfig'.lua_ls.setup {
       diagnostics = {
         -- Get the language server to recognize the `vim` global
         globals = {'vim', 'vim.api'},
+
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
@@ -125,9 +133,3 @@ require'lspconfig'.rust_analyzer.setup{
 
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.jedi_language_server.setup{}
-
--- required: yarn global add yaml-language-server
--- require('lspconfig').yamlls.setup{}
-
--- PHP LSP, where did i go wrong?
--- require'lspconfig'.phan.setup{}

@@ -21,8 +21,12 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Colorscheme and plugins
-require('colors')
+vim.cmd('colorscheme pitaya')
 require('plugins')
+
+-- Custom globals
+vim.g.cmp_is_enabled = false
+vim.g.diagnostics_virtual_text_enabled = true
 
 -- Plugins rc
 require('lsp_rc')

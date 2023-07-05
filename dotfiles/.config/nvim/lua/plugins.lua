@@ -90,6 +90,5 @@ return require('packer').startup(function(use)
   use 'nvim-pack/nvim-spectre'
   -- Harpoon
   use 'ThePrimeagen/harpoon'
-  use({ 'rose-pine/neovim', as = 'rose-pine' })
 end)
 
