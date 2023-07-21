@@ -328,6 +328,9 @@ globalkeys = gears.table.join(
     awful.key({"Shift"}, 'Print', function ()
       os.execute('maim -s -q --hidecursor | xclip -selection clipboard -t image/png')
     end),
+    awful.key({}, 'Print', function ()
+      os.execute('maim -q --hidecursor | xclip -selection clipboard -t image/png')
+    end),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,

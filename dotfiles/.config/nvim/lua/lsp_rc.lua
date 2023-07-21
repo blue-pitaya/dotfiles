@@ -35,14 +35,14 @@ vim.api.nvim_create_user_command('ToggleVirtError', function()
   configDiagnostics()
 end, {})
 
--- NOTE (for neotree): this is changed from v1.x, which used the old style of highlight groups
--- in the form "LspDiagnosticsSignWarning"
 -- Set diagnostic signs
-local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+-- Its set no text, becouse of signcolumn text jumping
+local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+vim.fn.sign_define('DapBreakpoint', { text = 'B', texthl = 'Breakpoint' })
 
 -- Custom border
 local border = {

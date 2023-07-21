@@ -12,6 +12,7 @@ local c58='#5f5f00'
 local c75='#5fafff'
 local c151='#afd7af'
 local c160='#d70000'
+local c164='#d700d7'
 local c167='#f27775' --changed
 local c173='#cf9d81' --changed
 local c186='#d7d787'
@@ -31,7 +32,7 @@ local c254="#e4e4e4"
 
 local cDarkGreen="#062d06"
 local cDarkRed="#440606"
-local cDarkBlue="#080853"
+local cDarkBlue='#141c2e'
 
 local h = function (name, val)
   vim.api.nvim_set_hl(0, name, val)
@@ -50,6 +51,9 @@ local p = {
   green = '#5aaa82',
   comment_color = c241
 }
+
+-- TODO: do i need it?
+h("Breakpoint", {fg = c164})
 
 h('Normal', {fg = "#e9e9e9"})
 h('Number', { link = "Normal" })
@@ -137,11 +141,12 @@ h('TelescopeBorder', {fg = c242, bg = cNone})
 h('TelescopeSelection', {bg = c237})
 
 -- Diff
-h('DiffChange', {fg = cNone, bg = c235})
+h('DiffChange', {fg = cNone, bg = cDarkBlue})
 h('DiffText', {fg = cNone, bg = cDarkBlue})
 h('DiffAdd', {fg = cNone, bg = cDarkGreen})
 h('DiffDelete', {fg = cNone, bg = cDarkRed})
 h('DiffviewDiffDelete', {fg = cDarkRed, bg = cDarkRed})
+h('DiffviewDiffDeleteDim', {fg = c235})
 h('FoldColumn', {fg = c51, bg = cNone})
 
 -- Parens

@@ -2,8 +2,8 @@ vim.cmd [[packadd packer.nvim]]
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 return require('packer').startup(function(use)
-  -- Plugin dev:
-  use '~/projects/nvim-scala-tools/nvim-plugin/'
+  -- Plugin dev: 
+  use '/home/kodus/projects/nvim-scala-tools/nvim-plugin/'
   -- Packer itself :)
   use 'wbthomason/packer.nvim'
   -- Required for telescope and other plugins
@@ -13,8 +13,6 @@ return require('packer').startup(function(use)
     's1n7ax/nvim-window-picker',
     tag = 'v1.5'
   }
-  -- Nui - required for better select
-  use "MunifTanjim/nui.nvim"
   use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
@@ -42,18 +40,6 @@ return require('packer').startup(function(use)
   -- LSP & programming
   use 'neovim/nvim-lspconfig' -- Huge repo of lsp configs
   use 'scalameta/nvim-metals' -- Scala plugin (syntax, lsp, code actions and more)
-  use {
-    'posva/vim-vue', -- Vue syntax highlight (this plugin may be a bit obslotete)
-    commit = 'c424294'
-  }
-  use {
-    'bfrg/vim-cpp-modern', -- C++ syntax highlight
-    commit = '0f0529b'
-  }
-  use {
-    'chr4/nginx.vim', -- Nginx syntax highlight
-    commit = '9969445'
-  }
   -- LSP extensions (requires plenary)
   --use 'jose-elias-alvarez/null-ls.nvim'
   -- Prettier
@@ -69,7 +55,10 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
   -- Auto brackets
-  use 'jiangmiao/auto-pairs'
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
   -- Snippets
   use  {
     'dcampos/nvim-snippy',
